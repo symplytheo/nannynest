@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -11,6 +11,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Provider as PaperProvider, Text } from 'react-native-paper';
 import theme from './styles/theme';
 import AppButton from './components/AppButton';
+import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -18,6 +19,10 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <PaperProvider theme={theme}>
