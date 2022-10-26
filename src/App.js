@@ -1,40 +1,22 @@
 import React, { useEffect } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { SafeAreaView, ScrollView, StatusBar, View } from 'react-native';
 
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Provider as PaperProvider, Text } from 'react-native-paper';
 import theme from './styles/theme';
 import AppButton from './components/AppButton';
 import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   useEffect(() => {
     SplashScreen.hide();
   }, []);
 
   return (
     <PaperProvider theme={theme}>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
-          <View style={{ padding: 1.25 }}>
+      <SafeAreaView style={{ backgroundColor: theme.colors.surface }}>
+        <StatusBar backgroundColor={theme.colors.primary} />
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+          <View style={{ padding: 1.25 + 0 }}>
             <Text variant="displayLarge">Display Large</Text>
             <Text variant="displayMedium">Display Medium</Text>
             <Text variant="displaySmall">Display small</Text>
@@ -57,7 +39,7 @@ const App = () => {
 
             <AppButton
               onPress={() => console.log('hello')}
-              style={{ marginTop: 16 }}>
+              style={{ marginTop: 16 + 0 }}>
               Get Started
             </AppButton>
           </View>
