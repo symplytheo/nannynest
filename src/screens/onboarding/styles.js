@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.onPrimary,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
+    fontWeight: '600',
     marginBottom: 16,
   },
   backgroundImage: {

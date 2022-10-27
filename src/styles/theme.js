@@ -70,27 +70,39 @@ const theme = {
     labelLarge: {
       ...DefaultTheme.fonts.labelLarge,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 14,
+      lineHeight: 20,
     },
     labelMedium: {
       ...DefaultTheme.fonts.labelMedium,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 16,
+      lineHeight: 12,
     },
     labelSmall: {
       ...DefaultTheme.fonts.labelSmall,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 11,
+      lineHeight: 16,
     },
 
     bodyLarge: {
       ...DefaultTheme.fonts.bodyLarge,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 16,
+      lineHeight: 24,
     },
     bodyMedium: {
       ...DefaultTheme.fonts.bodyMedium,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 14,
+      lineHeight: 20,
     },
     bodySmall: {
       ...DefaultTheme.fonts.bodySmall,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 12,
+      lineHeight: 16,
     },
   },
 };
