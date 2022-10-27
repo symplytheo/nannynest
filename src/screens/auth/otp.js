@@ -11,6 +11,7 @@ const AuthOtpScreen = ({ route, navigation }) => {
   const [otp, setOtp] = useState('');
 
   const handleNext = () => {
+    navigation.navigate('auth-profile');
     console.log({ otp });
   };
 
@@ -26,7 +27,7 @@ const AuthOtpScreen = ({ route, navigation }) => {
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => navigation.goBack()}>
-          <Text variant="labelLarge" style={styles.subtitle_alt}>
+          <Text variant="bodyLarge" style={styles.subtitle_alt}>
             Wrong number?
           </Text>
         </TouchableOpacity>
@@ -39,7 +40,7 @@ const AuthOtpScreen = ({ route, navigation }) => {
             handleTextChange={v => setOtp(v)}
           />
         </View>
-        <AppButton onPress={handleNext}>Continue</AppButton>
+        <AppButton onPress={handleNext}>Next</AppButton>
       </View>
     </SafeAreaView>
   );
