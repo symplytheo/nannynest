@@ -1,18 +1,19 @@
 import { MD3LightTheme as DefaultTheme } from 'react-native-paper';
+import { Colors } from './colors';
 
 const theme = {
   ...DefaultTheme,
   roundness: 8,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#CC5295',
-    primaryContainer: '#F5DCEA',
-    secondary: '#4169F5',
-    secondaryContainer: '#D9E1FD',
-    onPrimary: '#FFFFFF',
-    onPrimaryContainer: '#29101E',
-    onSecondary: '#F5F7FF',
-    onSecondaryContainer: '#0D1531',
+    primary: Colors.primary,
+    primaryContainer: Colors.primaryContainer,
+    secondary: Colors.secondary,
+    secondaryContainer: Colors.secondaryContainer,
+    onPrimary: Colors.onPrimary,
+    onPrimaryContainer: Colors.onPrimaryContainer,
+    onSecondary: Colors.onSecondary,
+    onSecondaryContainer: Colors.onSecondaryContainer,
   },
   fonts: {
     displayLarge: {
@@ -31,27 +32,39 @@ const theme = {
     headlineLarge: {
       ...DefaultTheme.fonts.headlineLarge,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 36,
+      lineHeight: 44,
     },
     headlineMedium: {
       ...DefaultTheme.fonts.headlineMedium,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 32,
+      lineHeight: 40,
     },
     headlineSmall: {
       ...DefaultTheme.fonts.headlineSmall,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 28,
+      lineHeight: 36,
     },
 
     titleLarge: {
       ...DefaultTheme.fonts.titleLarge,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 24,
+      lineHeight: 32,
     },
     titleMedium: {
       ...DefaultTheme.fonts.titleMedium,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 20,
+      lineHeight: 28,
     },
     titleSmall: {
       ...DefaultTheme.fonts.titleSmall,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 18,
+      lineHeight: 24,
     },
 
     labelLarge: {
