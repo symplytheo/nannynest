@@ -8,4 +8,5 @@ export const Colors = {
   onSecondary: '#F5F7FF',
   onSecondaryContainer: '#0D1531',
   white: '#FFFFFF',
+  background: '#F6F9FC',
 };
