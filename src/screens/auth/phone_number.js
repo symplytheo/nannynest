@@ -5,7 +5,7 @@ import CountryPicker from 'react-native-country-picker-modal';
 import AppButton from '../../components/app_button';
 import styles from './styles';
 
-const AuthPhoneNumberScreen = () => {
+const AuthPhoneNumberScreen = ({ navigation }) => {
   const [countryModal, setCountryModal] = useState(false);
   const [phone, setPhone] = useState(null);
   const [code, setCode] = useState('234');
@@ -23,7 +23,7 @@ const AuthPhoneNumberScreen = () => {
   }, [phone, code]);
 
   const handleNext = () => {
-    console.log(phoneNumber);
+    navigation.navigate('auth-otp', { phone: phoneNumber });
   };
 
   return (
