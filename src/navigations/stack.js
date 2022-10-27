@@ -1,10 +1,11 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Appbar, FAB } from 'react-native-paper';
+import { Colors } from '../styles/colors';
 import AppSplashScreen from '../screens/splash';
 import OnboardingScreen from '../screens/onboarding';
 import AuthPhoneNumberScreen from '../screens/auth/phone_number';
-import { Appbar, FAB } from 'react-native-paper';
-import { Colors } from '../styles/colors';
+import AuthOtpScreen from '../screens/auth/otp';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,7 @@ const StackNavigation = () => {
           ),
         }}>
         <Stack.Screen name="auth-phone" component={AuthPhoneNumberScreen} />
+        <Stack.Screen name="auth-otp" component={AuthOtpScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

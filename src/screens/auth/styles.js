@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
   subtitle: {
     color: '#555',
   },
+  subtitle_alt: {
+    color: Colors.primary,
+    fontFamily: 'Montserrat-Bold',
+    fontWeight: '600',
+    marginTop: 10,
+  },
   phoneInput: {
     marginTop: 24,
     marginBottom: 40,
@@ -38,6 +44,11 @@ const styles = StyleSheet.create({
   input: {
     height: 56,
     lineHeight: 16,
+  },
+  roundedTextInput: {
+    borderRadius: 8,
+    borderWidth: 1,
+    height: 56,
   },
 });
 
