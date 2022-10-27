@@ -32,27 +32,39 @@ const theme = {
     headlineLarge: {
       ...DefaultTheme.fonts.headlineLarge,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 36,
+      lineHeight: 44,
     },
     headlineMedium: {
       ...DefaultTheme.fonts.headlineMedium,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 32,
+      lineHeight: 40,
     },
     headlineSmall: {
       ...DefaultTheme.fonts.headlineSmall,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 28,
+      lineHeight: 36,
     },
 
     titleLarge: {
       ...DefaultTheme.fonts.titleLarge,
       fontFamily: 'Montserrat-Regular',
+      fontSize: 24,
+      lineHeight: 32,
     },
     titleMedium: {
       ...DefaultTheme.fonts.titleMedium,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 20,
+      lineHeight: 28,
     },
     titleSmall: {
       ...DefaultTheme.fonts.titleSmall,
       fontFamily: 'Montserrat-Medium',
+      fontSize: 18,
+      lineHeight: 24,
     },
 
     labelLarge: {
