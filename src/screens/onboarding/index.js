@@ -3,7 +3,7 @@ import { View, ImageBackground, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Text } from 'react-native-paper';
-import AppButton from '../../components/AppButton';
+import AppButton from '../../components/app_button';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 
@@ -28,7 +28,7 @@ const SLIDES = [
   },
 ];
 
-const OnboardingScreen = () => {
+const OnboardingScreen = ({ navigation }) => {
   const _renderItem = ({ item }) => (
     <ImageBackground source={item.image} style={styles.backgroundImage}>
       <LinearGradient
@@ -78,7 +78,7 @@ const OnboardingScreen = () => {
   };
 
   const _onDone = () => {
-    console.log('Get Started!!');
+    navigation.navigate('auth-phone');
   };
 
   return (
