@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
 import AppButton from '../../components/AppButton';
 import { Colors } from '../../styles/colors';
 
-const AppSplashScreen = () => {
+const AppSplashScreen = ({ navigation }) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.navigate('onboarding');
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
   return (
     <SafeAreaView style={styles.container}>
       <Image
         source={require('../../assets/img/nannynest.png')}
         style={styles.image}
       />
-
       <View style={styles.absolute}>
         <AppButton mode="text" loading={true} textColor="white" />
       </View>
