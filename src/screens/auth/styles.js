@@ -50,6 +50,35 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     height: 56,
   },
+  inputContainer: { marginBottom: 24 },
+  form: {
+    marginTop: 24,
+    marginBottom: 40,
+  },
+  terms: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: '#0005',
+  },
+  modalView: {
+    backgroundColor: Colors.background,
+    borderRadius: 24,
+    padding: 16,
+    paddingBottom: 36,
+    alignItems: 'center',
+    width: '100%',
+  },
+  uppercase: { textTransform: 'uppercase' },
+  avatar: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: Colors.primaryContainer,
+  },
 });
 
 export default styles;

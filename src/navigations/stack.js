@@ -6,6 +6,8 @@ import AppSplashScreen from '../screens/splash';
 import OnboardingScreen from '../screens/onboarding';
 import AuthPhoneNumberScreen from '../screens/auth/phone_number';
 import AuthOtpScreen from '../screens/auth/otp';
+import AuthUpdateProfileScreen from '../screens/auth/update_profile';
+// import AuthSocialAccount from '../screens/auth/social_account';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +37,8 @@ const StackNavigation = () => {
         }}>
         <Stack.Screen name="auth-phone" component={AuthPhoneNumberScreen} />
         <Stack.Screen name="auth-otp" component={AuthOtpScreen} />
+        <Stack.Screen name="auth-profile" component={AuthUpdateProfileScreen} />
+        {/* <Stack.Screen name="auth-social" component={AuthSocialAccount} /> */}
       </Stack.Group>
     </Stack.Navigator>
   );
