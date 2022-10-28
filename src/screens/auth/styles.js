@@ -79,6 +79,10 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     backgroundColor: Colors.primaryContainer,
   },
+  socialBtn: {
+    height: 56,
+    marginVertical: 8,
+  },
 });
 
 export default styles;
