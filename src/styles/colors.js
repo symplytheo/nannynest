@@ -9,4 +9,7 @@ export const Colors = {
   onSecondaryContainer: '#0D1531',
   white: '#FFFFFF',
   background: '#F6F9FC',
+  black: '#0B1129',
+  yellow: '#FFCB4B',
+  grey: '#808080',
 };

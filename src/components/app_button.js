@@ -32,7 +32,7 @@ const AppButton = ({
       theme={{ roundness: 2, ...theme }}
       contentStyle={{ height: 52, ...contentStyle }}
       labelStyle={{
-        ...appTheme.fonts.labelLarge,
+        ...appTheme.fonts.labelSmall,
         fontFamily: 'Montserrat-SemiBold',
         fontWeight: '600',
         labelStyle,

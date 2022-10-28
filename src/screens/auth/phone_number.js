@@ -5,7 +5,7 @@ import CountryPicker from 'react-native-country-picker-modal';
 import AppButton from '../../components/app_button';
 import styles from './styles';
 
-const AuthPhoneNumberScreen = () => {
+const AuthPhoneNumberScreen = ({ navigation }) => {
   const [countryModal, setCountryModal] = useState(false);
   const [phone, setPhone] = useState(null);
   const [code, setCode] = useState('234');
@@ -23,7 +23,7 @@ const AuthPhoneNumberScreen = () => {
   }, [phone, code]);
 
   const handleNext = () => {
-    console.log(phoneNumber);
+    navigation.navigate('auth-otp', { phone: phoneNumber });
   };
 
   return (
@@ -32,7 +32,7 @@ const AuthPhoneNumberScreen = () => {
         <Text variant="titleMedium" style={styles.title}>
           Enter your phone number
         </Text>
-        <Text variant="labelLarge" style={styles.subtitle}>
+        <Text variant="labelSmall" style={styles.subtitle}>
           You’ll receive a 6-digit confirmation code
         </Text>
         <View style={styles.phoneInput}>

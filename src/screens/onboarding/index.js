@@ -60,7 +60,7 @@ const OnboardingScreen = ({ navigation }) => {
 
   const _renderNextButton = () => (
     <View style={styles.nextBtn}>
-      <Text variant="labelLarge" style={styles.nextBtnText}>
+      <Text variant="labelSmall" style={styles.nextBtnText}>
         Next
       </Text>
     </View>
