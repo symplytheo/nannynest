@@ -63,7 +63,7 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
         <Text variant="titleMedium" style={styles.title}>
           Update your profile
         </Text>
-        <Text variant="labelLarge" style={styles.subtitle}>
+        <Text variant="labelSmall" style={styles.subtitle}>
           We just need few information
         </Text>
         <View style={styles.form}>

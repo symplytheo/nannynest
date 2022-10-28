@@ -70,20 +70,20 @@ const theme = {
     labelLarge: {
       ...DefaultTheme.fonts.labelLarge,
       fontFamily: 'Montserrat-Medium',
-      fontSize: 14,
-      lineHeight: 20,
+      fontSize: 18,
+      lineHeight: 24,
     },
     labelMedium: {
       ...DefaultTheme.fonts.labelMedium,
       fontFamily: 'Montserrat-Medium',
       fontSize: 16,
-      lineHeight: 12,
+      lineHeight: 24,
     },
     labelSmall: {
       ...DefaultTheme.fonts.labelSmall,
       fontFamily: 'Montserrat-Medium',
-      fontSize: 11,
-      lineHeight: 16,
+      fontSize: 14,
+      lineHeight: 20,
     },
 
     bodyLarge: {

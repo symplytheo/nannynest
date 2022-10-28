@@ -21,7 +21,7 @@ const AuthOtpScreen = ({ route, navigation }) => {
         <Text variant="titleMedium" style={styles.title}>
           Enter OTP
         </Text>
-        <Text variant="labelLarge" style={styles.subtitle}>
+        <Text variant="labelSmall" style={styles.subtitle}>
           {`We’ve just sent ${phone} an OTP`}
         </Text>
         <TouchableOpacity

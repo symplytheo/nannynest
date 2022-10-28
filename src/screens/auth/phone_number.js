@@ -32,7 +32,7 @@ const AuthPhoneNumberScreen = ({ navigation }) => {
         <Text variant="titleMedium" style={styles.title}>
           Enter your phone number
         </Text>
-        <Text variant="labelLarge" style={styles.subtitle}>
+        <Text variant="labelSmall" style={styles.subtitle}>
           You’ll receive a 6-digit confirmation code
         </Text>
         <View style={styles.phoneInput}>
