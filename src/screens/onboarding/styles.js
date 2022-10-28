@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { Colors } from '../../styles/colors';
 
 const styles = StyleSheet.create({
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.onPrimary,
     fontFamily: 'Montserrat-Bold',
-    fontWeight: '600',
+    fontWeight: Platform.OS === 'ios' ? '700' : '600',
     marginBottom: 16,
   },
   backgroundImage: {
