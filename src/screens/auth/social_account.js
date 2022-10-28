@@ -36,7 +36,9 @@ const SOCIALS = [
 ];
 
 const AuthSocialAccount = ({ navigation }) => {
-  const handleNext = () => {};
+  const handleNext = () => {
+    navigation.navigate('nanny');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,7 +46,7 @@ const AuthSocialAccount = ({ navigation }) => {
         <Text variant="titleMedium" style={styles.title}>
           Connect social media account
         </Text>
-        <Text variant="labelLarge" style={styles.subtitle}>
+        <Text variant="labelSmall" style={styles.subtitle}>
           Add more social account to proof your legibility. This way we trust
           you.
         </Text>
