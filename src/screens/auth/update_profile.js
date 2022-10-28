@@ -53,8 +53,8 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
   };
 
   const handleNext = () => {
-    console.log(form);
-    // navigation.navigate('auth-social');
+    navigation.navigate('auth-social');
+    console.log(Object.keys(form));
   };
 
   return (
