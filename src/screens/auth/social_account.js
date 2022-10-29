@@ -37,7 +37,7 @@ const SOCIALS = [
 
 const AuthSocialAccount = ({ navigation }) => {
   const handleNext = () => {
-    navigation.navigate('nanny');
+    navigation.navigate('dashboard', { screen: 'home' });
   };
 
   return (
