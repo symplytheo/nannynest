@@ -9,6 +9,7 @@ import AuthOtpScreen from '../screens/auth/otp';
 import AuthUpdateProfileScreen from '../screens/auth/update_profile';
 import AuthSocialAccount from '../screens/auth/social_account';
 import NannyProfileScreen from '../screens/nanny_profile';
+import TabNavigation from './tab';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const StackNavigation = () => {
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="dashboard" component={TabNavigation} />
       </Stack.Group>
 
       <Stack.Group
@@ -42,11 +44,10 @@ const StackNavigation = () => {
         <Stack.Screen name="auth-social" component={AuthSocialAccount} />
       </Stack.Group>
 
-      <Stack.Screen
-        name="nanny"
-        component={NannyProfileScreen}
-        options={{ headerShown: false }}
-      />
+      {/* Ordering Nanny Stacks */}
+      <Stack.Group screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="nanny" component={NannyProfileScreen} />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };
