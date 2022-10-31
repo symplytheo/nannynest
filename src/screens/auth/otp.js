@@ -31,12 +31,13 @@ const AuthOtpScreen = ({ route, navigation }) => {
             Wrong number?
           </Text>
         </TouchableOpacity>
-        <View style={styles.phoneInput}>
+        <View style={[styles.phoneInput, styles.otp]}>
           <OTPTextView
             defaultValue={otp}
             tintColor={Colors.primary}
-            inputCount={6}
+            inputCount={4}
             textInputStyle={styles.roundedTextInput}
+            selectionColor={Colors.secondary}
             handleTextChange={v => setOtp(v)}
           />
         </View>

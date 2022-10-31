@@ -35,9 +35,13 @@ const styles = StyleSheet.create({
   section: {
     marginVertical: 16,
   },
-  bold: { fontWeight: Platform.OS === 'ios' ? '700' : '600' },
+  bold: {
+    fontFamily: 'Montserrat-Bold',
+    fontWeight: Platform.OS === 'ios' ? '700' : '600',
+  },
   sectionTitle: {
     marginBottom: 16,
+    fontFamily: 'Montserrat-Bold',
     fontWeight: Platform.OS === 'ios' ? '700' : '600',
   },
   fabContainer: {
@@ -52,14 +56,17 @@ const styles = StyleSheet.create({
   locationText: { marginLeft: 6 },
   sessionCard: {
     borderWidth: 1,
-    borderColor: Colors.grey,
+    borderColor: '#ccc',
     borderRadius: 8,
     paddingHorizontal: 12,
     paddingVertical: 8,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  sessionCardText: { marginHorizontal: 16, flexGrow: 1 },
+  sessionCardText: {
+    marginHorizontal: 16,
+    flexGrow: 1,
+  },
   mx0: { marginHorizontal: 0 },
   mb4: { marginBottom: 4 },
 });

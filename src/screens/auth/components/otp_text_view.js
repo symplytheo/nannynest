@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   textInput: {
     height: 50,
     width: 50,
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     margin: 5,
     textAlign: 'center',
     fontSize: 22,
@@ -197,6 +197,7 @@ class OTPTextView extends Component {
           onFocus={() => this.onInputFocus(i)}
           onChangeText={text => this.onTextChange(text, i)}
           multiline={false}
+          selectionColor={this.props.selectionColor}
           onKeyPress={e => this.onKeyPress(e, i)}
           {...textInputProps}
         />,
