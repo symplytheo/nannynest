@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, ScrollView, View } from 'react-native';
+import { Image, ScrollView, StatusBar, View } from 'react-native';
 import { Chip, FAB, Text } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -14,6 +14,13 @@ const NannyProfileScreen = ({ navigation }) => {
       style={styles.container}
       forceInset={{ top: 'never' }}
       edges={['right', 'bottom', 'left']}>
+      {/*  */}
+      <StatusBar
+        translucent={true}
+        backgroundColor={Colors.secondary + '55'}
+        barStyle={'dark-content'}
+      />
+      {/*  */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Image
           source={require('../../assets/img/person.png')}
