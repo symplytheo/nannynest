@@ -17,7 +17,7 @@ import styles from './styles';
 import person from '../../assets/img/person.png';
 
 const DashboardScreen = ({ navigation }) => {
-  const [showOngoing] = useState(false);
+  const [showOngoing] = useState(true);
   const [showRateNanny] = useState(false);
 
   const scale = useRef(new Animated.Value(1)).current;
