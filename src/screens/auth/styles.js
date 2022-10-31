@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  otp: { justifyContent: 'center' },
   country: {
     width: '35%',
   },
@@ -47,13 +48,13 @@ const styles = StyleSheet.create({
   },
   roundedTextInput: {
     borderRadius: 8,
-    borderWidth: 1,
+    borderWidth: 2,
     height: 56,
   },
   inputContainer: { marginBottom: 24 },
   form: {
     marginTop: 24,
-    marginBottom: 40,
+    marginBottom: 24,
   },
   terms: {
     flexDirection: 'row',

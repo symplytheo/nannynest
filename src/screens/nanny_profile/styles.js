@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   bold: {
+    fontFamily: 'Montserrat-Bold',
     fontWeight: Platform.OS === 'ios' ? '700' : '600',
   },
   section: {
@@ -33,11 +34,12 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     marginBottom: 16,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
+    fontWeight: Platform.OS === 'ios' ? '700' : '600',
   },
   fabBack: {
     position: 'absolute',
-    top: 52,
+    top: 40,
     left: 16,
     flexDirection: 'row',
   },
