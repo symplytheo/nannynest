@@ -3,7 +3,7 @@ import { Image, ScrollView, StatusBar, View } from 'react-native';
 import { Chip, FAB, Text } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 

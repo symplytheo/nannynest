@@ -3,7 +3,7 @@ import { View, ImageBackground, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Text } from 'react-native-paper';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 

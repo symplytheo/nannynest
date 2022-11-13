@@ -9,7 +9,7 @@ import {
 import { Avatar, Checkbox, Text, TextInput } from 'react-native-paper';
 import DatePicker, { getToday } from 'react-native-modern-datepicker';
 import DocumentPicker from 'react-native-document-picker';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import styles from './styles';
 import { Colors } from '../../styles/colors';
 const RNFS = require('react-native-fs');
