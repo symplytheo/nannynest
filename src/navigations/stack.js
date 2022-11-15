@@ -13,6 +13,7 @@ import NannyProfileScreen from '../screens/nanny_profile';
 import TabNavigation from './tab';
 import CancellationScreen from '../screens/cancellation';
 import CancellationOthersScreen from '../screens/cancellation/others';
+import ChecklistScreen from '../screens/checklist';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +58,7 @@ const StackNavigation = () => {
       {/* Ordering Nanny Stacks */}
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="nanny" component={NannyProfileScreen} />
+        <Stack.Screen name="checklist" component={ChecklistScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

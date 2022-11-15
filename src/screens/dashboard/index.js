@@ -183,7 +183,7 @@ const DashboardScreen = ({ navigation }) => {
           <FAB
             icon="circle"
             color={Colors.primary}
-            onPress={() => Alert.alert('Live Feed')}
+            onPress={() => navigation.navigate('checklist')}
           />
         </Animated.View>
       )}
