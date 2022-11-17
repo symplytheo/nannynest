@@ -16,6 +16,7 @@ import CancellationOthersScreen from '../screens/cancellation/others';
 import ChecklistScreen from '../screens/checklist';
 import OrderDateTimeModalScreen from '../screens/ordering/date_time_modal';
 import BeneficiaryScreen from '../screens/ordering/beneficiary';
+import OrderSummaryScreen from '../screens/ordering/order_summary';
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +70,7 @@ const StackNavigation = () => {
       </Stack.Group>
       <Stack.Group screenOptions={{ headerTitle: '' }}>
         <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
+        <Stack.Screen name="order-summary" component={OrderSummaryScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

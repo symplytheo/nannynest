@@ -66,4 +66,16 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
   },
+  bordered: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: Colors.grey + '50',
+  },
+  map: {
+    width: '100%',
+    height: 180,
+    borderRadius: 8,
+  },
+  paymentRow: { flexDirection: 'row', alignItems: 'center' },
+  dateSummary: { marginLeft: 4, flex: 1 },
 });
