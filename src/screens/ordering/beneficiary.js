@@ -8,7 +8,7 @@ import RNPickerSelect from '../../components/RNPickerSelect';
 import { Colors } from '../../styles/colors';
 import { styles } from './styles';
 
-const BeneficiaryScreen = () => {
+const BeneficiaryScreen = ({ navigation }) => {
   const [beneficiaries, setBeneficiaries] = useState([
     { category: 'Infants', age: '24' },
   ]);
@@ -116,7 +116,9 @@ const BeneficiaryScreen = () => {
             $5/hr
           </Text>
         </View>
-        <AppButton onPress={() => console.log('hello')}>Total $230</AppButton>
+        <AppButton onPress={() => navigation.navigate('order-summary')}>
+          Total $230
+        </AppButton>
       </View>
     </SafeAreaView>
   );
