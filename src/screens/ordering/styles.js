@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    backgroundColor: Colors.black + '55',
+    backgroundColor: Colors.black + '77',
   },
   orderDate: {
     backgroundColor: Colors.background,
@@ -78,4 +78,15 @@ export const styles = StyleSheet.create({
   },
   paymentRow: { flexDirection: 'row', alignItems: 'center' },
   dateSummary: { marginLeft: 4, flex: 1 },
+  safety: {
+    backgroundColor: Colors.secondary,
+    height: 120,
+    borderRadius: 16,
+    overflow: 'hidden',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingRight: 24,
+  },
+  safetyImage: { height: 150, width: 100 },
 });

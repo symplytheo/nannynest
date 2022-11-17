@@ -17,6 +17,7 @@ import ChecklistScreen from '../screens/checklist';
 import OrderDateTimeModalScreen from '../screens/ordering/date_time_modal';
 import BeneficiaryScreen from '../screens/ordering/beneficiary';
 import OrderSummaryScreen from '../screens/ordering/order_summary';
+import OrderStatusScreen from '../screens/ordering/order_status';
 
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +67,11 @@ const StackNavigation = () => {
           name="order-datetime"
           options={{ presentation: 'transparentModal' }}
           component={OrderDateTimeModalScreen}
+        />
+        <Stack.Screen
+          name="order-status"
+          options={{ presentation: 'transparentModal' }}
+          component={OrderStatusScreen}
         />
       </Stack.Group>
       <Stack.Group screenOptions={{ headerTitle: '' }}>
