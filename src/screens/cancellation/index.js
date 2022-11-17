@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, View } from 'react-native';
 import { RadioButton, Text } from 'react-native-paper';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import { styles } from './styles';
 
 const REASONS = [

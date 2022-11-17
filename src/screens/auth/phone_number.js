@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { Text, TextInput } from 'react-native-paper';
 import CountryPicker from 'react-native-country-picker-modal';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import styles from './styles';
 
 const AuthPhoneNumberScreen = ({ navigation }) => {

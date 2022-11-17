@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 

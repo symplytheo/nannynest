@@ -14,12 +14,15 @@ import TabNavigation from './tab';
 import CancellationScreen from '../screens/cancellation';
 import CancellationOthersScreen from '../screens/cancellation/others';
 import ChecklistScreen from '../screens/checklist';
+import OrderDateTimeModalScreen from '../screens/ordering/date_time_modal';
+import BeneficiaryScreen from '../screens/ordering/beneficiary';
+import OrderSummaryScreen from '../screens/ordering/order_summary';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="dashboard">
+    <Stack.Navigator initialRouteName="welcome">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -59,6 +62,15 @@ const StackNavigation = () => {
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="nanny" component={NannyProfileScreen} />
         <Stack.Screen name="checklist" component={ChecklistScreen} />
+        <Stack.Screen
+          name="order-datetime"
+          options={{ presentation: 'transparentModal' }}
+          component={OrderDateTimeModalScreen}
+        />
+      </Stack.Group>
+      <Stack.Group screenOptions={{ headerTitle: '' }}>
+        <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
+        <Stack.Screen name="order-summary" component={OrderSummaryScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

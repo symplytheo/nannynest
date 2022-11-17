@@ -5,7 +5,7 @@ import lock from '../../assets/img/lock.png';
 import { Colors } from '../../styles/colors';
 import { styles } from './styles';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 
 const CHECKLIST = [
   'Lock away valuables',

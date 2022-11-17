@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import OTPTextView from './components/otp_text_view';
 import { Colors } from '../../styles/colors';
 import styles from './styles';

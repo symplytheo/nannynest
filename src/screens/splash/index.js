@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
-import AppButton from '../../components/app_button';
+import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 
 const AppSplashScreen = ({ navigation }) => {
