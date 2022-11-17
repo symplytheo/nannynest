@@ -19,6 +19,7 @@ import BeneficiaryScreen from '../screens/ordering/beneficiary';
 import OrderSummaryScreen from '../screens/ordering/order_summary';
 import OrderStatusScreen from '../screens/ordering/order_status';
 import NannyDestinationScreen from '../screens/ordering/nanny_destination';
+import OrderMapEditScreen from '../screens/ordering/map_edit';
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,7 @@ const StackNavigation = () => {
           options={{ presentation: 'transparentModal' }}
           component={OrderStatusScreen}
         />
+        <Stack.Screen name="map-edit" component={OrderMapEditScreen} />
       </Stack.Group>
       <Stack.Group screenOptions={{ headerTitle: '' }}>
         <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />

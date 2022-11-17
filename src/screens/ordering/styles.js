@@ -95,4 +95,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   arrow: { flexDirection: 'row', justifyContent: 'center', width: '100%' },
+  closeFabContainer: {
+    position: 'absolute',
+    flexDirection: 'row',
+  },
+  closeFab: {
+    backgroundColor: Colors.white,
+    borderRadius: 8,
+    marginLeft: 16,
+  },
 });
