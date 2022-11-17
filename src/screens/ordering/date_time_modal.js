@@ -30,6 +30,11 @@ const OrderDateTimeModalScreen = ({ navigation }) => {
     setModal(prev => ({ ...prev, [type]: false }));
   };
 
+  const handleNext = () => {
+    navigation.goBack();
+    navigation.navigate('beneficiary');
+  };
+
   return (
     <TouchableOpacity
       activeOpacity={1}
@@ -119,7 +124,7 @@ const OrderDateTimeModalScreen = ({ navigation }) => {
             icon="check"
             style={styles.orderDateFab}
             color={Colors.white}
-            onPress={navigation.goBack}
+            onPress={handleNext}
           />
         </View>
       </View>
