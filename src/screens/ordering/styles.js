@@ -104,4 +104,8 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     marginLeft: 16,
   },
+  rowed: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
