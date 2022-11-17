@@ -18,6 +18,7 @@ import OrderDateTimeModalScreen from '../screens/ordering/date_time_modal';
 import BeneficiaryScreen from '../screens/ordering/beneficiary';
 import OrderSummaryScreen from '../screens/ordering/order_summary';
 import OrderStatusScreen from '../screens/ordering/order_status';
+import NannyDestinationScreen from '../screens/ordering/nanny_destination';
 
 const Stack = createNativeStackNavigator();
 
@@ -77,6 +78,18 @@ const StackNavigation = () => {
       <Stack.Group screenOptions={{ headerTitle: '' }}>
         <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
         <Stack.Screen name="order-summary" component={OrderSummaryScreen} />
+        <Stack.Screen
+          name="nanny-destination"
+          component={NannyDestinationScreen}
+          options={{
+            headerTitle: 'Nanny is on their way to you',
+            headerTitleStyle: {
+              fontWeight: '400',
+              fontFamily: 'Montserrat',
+              fontSize: 14,
+            },
+          }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

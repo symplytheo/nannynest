@@ -89,4 +89,10 @@ export const styles = StyleSheet.create({
     paddingRight: 24,
   },
   safetyImage: { height: 150, width: 100 },
+  mapBg: {
+    minHeight: '100%',
+    width: '100%',
+    justifyContent: 'flex-end',
+  },
+  arrow: { flexDirection: 'row', justifyContent: 'center', width: '100%' },
 });
