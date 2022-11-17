@@ -122,7 +122,9 @@ const OrderSummaryScreen = ({ navigation }) => {
           </Text>
         </View>
 
-        <AppButton>Continue to Book</AppButton>
+        <AppButton onPress={() => navigation.navigate('order-status')}>
+          Continue to Book
+        </AppButton>
       </ScrollView>
     </SafeAreaView>
   );
