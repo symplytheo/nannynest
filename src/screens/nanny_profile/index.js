@@ -144,7 +144,7 @@ const NannyProfileScreen = ({ navigation }) => {
             mode="elevated"
             buttonColor={Colors.primary}
             textColor={Colors.onPrimary}
-            onPress={() => navigation.navigate('cancel-order')}>
+            onPress={() => navigation.navigate('order-datetime')}>
             Book now
           </AppButton>
         </View>
