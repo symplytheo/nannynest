@@ -129,7 +129,7 @@ const DashboardScreen = ({ navigation }) => {
             <SessionCard
               title="Ongoing session"
               subtitle="Tap to see livefeed"
-              onPress={() => Alert.alert('Live Feed')}
+              onPress={() => navigation.navigate('livefeed')}
             />
           )}
 
@@ -183,7 +183,7 @@ const DashboardScreen = ({ navigation }) => {
           <FAB
             icon="circle"
             color={Colors.primary}
-            onPress={() => navigation.navigate('checklist')}
+            onPress={() => navigation.navigate('livefeed')}
           />
         </Animated.View>
       )}
