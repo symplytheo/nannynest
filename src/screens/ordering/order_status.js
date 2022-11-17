@@ -133,7 +133,14 @@ const OrderStatusScreen = ({ navigation }) => {
 
         <View>
           {status === 'accepted' ? (
-            <AppButton style={styles.mb16}>Continue</AppButton>
+            <AppButton
+              style={styles.mb16}
+              onPress={() => {
+                navigation.goBack();
+                navigation.navigate('nanny-destination');
+              }}>
+              Continue
+            </AppButton>
           ) : status === 'rejected' ? (
             <AppButton
               style={styles.mb16}
