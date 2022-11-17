@@ -1,17 +1,12 @@
 import React, { useCallback, useState } from 'react';
-import {
-  Modal,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Avatar, Checkbox, Text, TextInput } from 'react-native-paper';
-import DatePicker, { getToday } from 'react-native-modern-datepicker';
+import { getToday } from 'react-native-modern-datepicker';
 import DocumentPicker from 'react-native-document-picker';
 import AppButton from '../../components/appbutton';
+import DatePickerModal from '../../components/datepicker_modal';
 import styles from './styles';
-import { Colors } from '../../styles/colors';
+
 const RNFS = require('react-native-fs');
 
 const AuthUpdateProfileScreen = ({ navigation }) => {
@@ -143,47 +138,15 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
         <AppButton onPress={handleNext}>Continue</AppButton>
       </ScrollView>
 
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={dateModal}
-        onRequestClose={() => {
-          console.log('Modal has been closed.');
-        }}>
-        <TouchableOpacity
-          activeOpacity={1}
-          style={styles.modalContainer}
-          onPress={() => setDateModal(false)}>
-          <View
-            style={styles.modalView}
-            onStartShouldSetResponder={event => true}
-            onTouchEnd={e => {
-              e.stopPropagation();
-            }}>
-            <Text style={[styles.subtitle_alt, styles.uppercase]}>
-              Date of Birth
-            </Text>
-            <DatePicker
-              options={{
-                backgroundColor: Colors.background,
-                textHeaderColor: Colors.onPrimaryContainer,
-                selectedTextColor: Colors.onPrimary,
-                mainColor: Colors.primary,
-                textSecondaryColor: Colors.onPrimaryContainer,
-                borderColor: Colors.background,
-              }}
-              mode="calendar"
-              current={form.dob}
-              selected={form.dob}
-              onSelectedChange={_onSelectedChange}
-            />
-
-            <AppButton mode="text" onPress={() => setDateModal(false)}>
-              OK
-            </AppButton>
-          </View>
-        </TouchableOpacity>
-      </Modal>
+      {/*  */}
+      <DatePickerModal
+        title="Date of Birth"
+        open={dateModal}
+        current={form.dob}
+        selected={form.dob}
+        onSelectedChange={_onSelectedChange}
+        onClose={() => setDateModal(false)}
+      />
     </SafeAreaView>
   );
 };
