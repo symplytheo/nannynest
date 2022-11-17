@@ -15,6 +15,7 @@ import CancellationScreen from '../screens/cancellation';
 import CancellationOthersScreen from '../screens/cancellation/others';
 import ChecklistScreen from '../screens/checklist';
 import OrderDateTimeModalScreen from '../screens/ordering/date_time_modal';
+import BeneficiaryScreen from '../screens/ordering/beneficiary';
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +66,9 @@ const StackNavigation = () => {
           options={{ presentation: 'transparentModal' }}
           component={OrderDateTimeModalScreen}
         />
+      </Stack.Group>
+      <Stack.Group screenOptions={{ headerTitle: '' }}>
+        <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
