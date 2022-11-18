@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Alert,
   Image,
   SafeAreaView,
   ScrollView,
@@ -66,7 +65,7 @@ const OrderSummaryScreen = ({ navigation }) => {
         <TouchableOpacity
           style={[styles.mb16]}
           activeOpacity={0.7}
-          onPress={() => Alert.alert('Map View')}>
+          onPress={() => navigation.navigate('map-edit')}>
           <View style={[styles.row, styles.mb16]}>
             <MCIcon name="map-marker" size={24} color={Colors.primary} />
             <Text variant="bodyMedium">
