@@ -142,7 +142,7 @@ const DashboardScreen = ({ navigation }) => {
             />
           )}
         </View>
-        <View style={styles.section}>
+        <View style={[styles.section, { marginTop: 0 + 0 }]}>
           <Text variant="bodyLarge" style={styles.sectionTitle}>
             Top rated
           </Text>
