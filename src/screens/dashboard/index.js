@@ -129,7 +129,7 @@ const DashboardScreen = ({ navigation }) => {
             <SessionCard
               title="Ongoing session"
               subtitle="Tap to see livefeed"
-              onPress={() => Alert.alert('Live Feed')}
+              onPress={() => navigation.navigate('livefeed')}
             />
           )}
 
@@ -142,7 +142,7 @@ const DashboardScreen = ({ navigation }) => {
             />
           )}
         </View>
-        <View style={styles.section}>
+        <View style={[styles.section, { marginTop: 0 + 0 }]}>
           <Text variant="bodyLarge" style={styles.sectionTitle}>
             Top rated
           </Text>
@@ -183,7 +183,7 @@ const DashboardScreen = ({ navigation }) => {
           <FAB
             icon="circle"
             color={Colors.primary}
-            onPress={() => navigation.navigate('checklist')}
+            onPress={() => navigation.navigate('livefeed')}
           />
         </Animated.View>
       )}

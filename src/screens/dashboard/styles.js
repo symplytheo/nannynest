@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
   section: {
-    marginVertical: 16,
+    marginVertical: 8,
   },
   bold: {
     fontFamily: 'Montserrat-Bold',

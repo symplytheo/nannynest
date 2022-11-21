@@ -49,7 +49,9 @@ const NannyDestinationScreen = ({ navigation }) => {
                 08:00
               </Text>
             </View>
-            <AppButton mode="text">Chat Nanny</AppButton>
+            <AppButton mode="text" onPress={() => navigation.navigate('chat')}>
+              Chat Nanny
+            </AppButton>
           </View>
 
           {show && (
