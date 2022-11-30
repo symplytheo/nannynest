@@ -30,6 +30,7 @@ import AccountUpdateProfileScreen from '../screens/profile_tab/update_profile';
 import PaymentMethodScreen from '../screens/profile_tab/payment';
 import PaymentAddCardScreen from '../screens/profile_tab/payment_addcard';
 import OrderDetails from '../screens/myorder/details';
+import RateNannyScreen from '../screens/ordering/rate_nanny';
 
 const Stack = createNativeStackNavigator();
 
@@ -87,6 +88,11 @@ const StackNavigation = () => {
         />
         <Stack.Screen name="map-edit" component={OrderMapEditScreen} />
         <Stack.Screen name="livefeed" component={LiveFeedScreen} />
+        <Stack.Screen
+          name="rate-nanny"
+          options={{ presentation: 'transparentModal' }}
+          component={RateNannyScreen}
+        />
       </Stack.Group>
 
       <Stack.Group
