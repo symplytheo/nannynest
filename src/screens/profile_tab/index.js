@@ -14,7 +14,7 @@ import styles from './styles';
 
 const ProfileTabScreen = ({ navigation }) => {
   const SCREENS = [
-    { icon: 'cash-multiple', text: 'Payment', route: '' },
+    { icon: 'cash-multiple', text: 'Payment', route: 'payment' },
     { icon: 'account', text: 'Profile', route: 'profile' },
     { icon: 'map-marker', text: 'Address book', route: 'address-book' },
     { icon: 'cog', text: 'Settings', route: '' },
