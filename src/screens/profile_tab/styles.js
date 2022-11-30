@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
   country: { width: '35%' },
   number: { width: '60%', height: 56 },
   flag: { width: 24, height: 16 },
+  method: { marginLeft: 16, flex: 1 },
 });
 
 export default styles;

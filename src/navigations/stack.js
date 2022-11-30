@@ -27,6 +27,7 @@ import AboutScreen from '../screens/profile_tab/about';
 import AddressBookScreen from '../screens/profile_tab/address_book';
 import ProfileOverviewScreen from '../screens/profile_tab/profile';
 import AccountUpdateProfileScreen from '../screens/profile_tab/update_profile';
+import PaymentMethodScreen from '../screens/profile_tab/payment';
 
 const Stack = createNativeStackNavigator();
 
@@ -85,7 +86,11 @@ const StackNavigation = () => {
         <Stack.Screen name="map-edit" component={OrderMapEditScreen} />
         <Stack.Screen name="livefeed" component={LiveFeedScreen} />
       </Stack.Group>
-      <Stack.Group screenOptions={{ headerTitle: '' }}>
+      <Stack.Group
+        screenOptions={{
+          headerTitle: '',
+          headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+        }}>
         <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
         <Stack.Screen name="order-summary" component={OrderSummaryScreen} />
         <Stack.Screen
@@ -136,6 +141,11 @@ const StackNavigation = () => {
           name="update-profile"
           component={AccountUpdateProfileScreen}
           options={{ headerTitle: 'Update Profile' }}
+        />
+        <Stack.Screen
+          name="payment"
+          component={PaymentMethodScreen}
+          options={{ headerTitle: 'Payment' }}
         />
       </Stack.Group>
     </Stack.Navigator>
