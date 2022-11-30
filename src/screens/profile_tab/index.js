@@ -12,16 +12,16 @@ import person from '../../assets/img/person.png';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 
-const SCREENS = [
-  { icon: 'cash-multiple', text: 'Payment', route: '' },
-  { icon: 'account', text: 'Profile', route: '' },
-  { icon: 'map-marker', text: 'Address book', route: '' },
-  { icon: 'cog', text: 'Settings', route: '' },
-  { icon: 'information', text: 'About', route: '' },
-  { icon: 'help-circle', text: 'Help', route: '' },
-];
+const ProfileTabScreen = ({ navigation }) => {
+  const SCREENS = [
+    { icon: 'cash-multiple', text: 'Payment', route: '' },
+    { icon: 'account', text: 'Profile', route: '' },
+    { icon: 'map-marker', text: 'Address book', route: '' },
+    { icon: 'cog', text: 'Settings', route: '' },
+    { icon: 'information', text: 'About', route: 'about' },
+    { icon: 'help-circle', text: 'Help', route: '' },
+  ];
 
-const ProfileTabScreen = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -37,7 +37,12 @@ const ProfileTabScreen = () => {
             <TouchableOpacity
               key={screen.text}
               activeOpacity={0.7}
-              style={styles.tabActionItem}>
+              style={styles.tabActionItem}
+              onPress={
+                screen.route
+                  ? () => navigation.navigate(screen.route)
+                  : () => {}
+              }>
               <MCIcon
                 name={screen.icon}
                 style={{ marginRight: 16 + 0 }}

@@ -5,7 +5,7 @@ import { Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DashboardScreen from '../screens/dashboard';
 import { Colors } from '../styles/colors';
-import ProfileTabScreen from '../screens/profile';
+import ProfileTabScreen from '../screens/profile_tab';
 
 const Tab = createMaterialBottomTabNavigator();
 
