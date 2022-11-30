@@ -26,6 +26,19 @@ const styles = StyleSheet.create({
   },
   profileOverview: { flexDirection: 'row', alignItems: 'center' },
   socialBtn: { height: 56, marginVertical: 8 },
+  input: { height: 56, lineHeight: 16 },
+  inputContainer: { marginBottom: 24 },
+  form: { marginVertical: 24 },
+  avatar: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: Colors.primaryContainer,
+  },
+  title: { marginBottom: 8, fontWeight: '500' },
+  phoneInput: { flexDirection: 'row', justifyContent: 'space-between' },
+  country: { width: '35%' },
+  number: { width: '60%', height: 56 },
+  flag: { width: 24, height: 16 },
 });
 
 export default styles;

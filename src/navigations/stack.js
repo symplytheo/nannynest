@@ -26,6 +26,7 @@ import ChatScreen from '../screens/ordering/chat';
 import AboutScreen from '../screens/profile_tab/about';
 import AddressBookScreen from '../screens/profile_tab/address_book';
 import ProfileOverviewScreen from '../screens/profile_tab/profile';
+import AccountUpdateProfileScreen from '../screens/profile_tab/update_profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -130,6 +131,11 @@ const StackNavigation = () => {
           name="profile"
           component={ProfileOverviewScreen}
           options={{ headerTitle: 'Profile' }}
+        />
+        <Stack.Screen
+          name="update-profile"
+          component={AccountUpdateProfileScreen}
+          options={{ headerTitle: 'Update Profile' }}
         />
       </Stack.Group>
     </Stack.Navigator>

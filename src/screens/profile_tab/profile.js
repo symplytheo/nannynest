@@ -42,7 +42,7 @@ const SOCIALS = [
   },
 ];
 
-const ProfileOverviewScreen = () => {
+const ProfileOverviewScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -61,7 +61,8 @@ const ProfileOverviewScreen = () => {
           </View>
           <TouchableOpacity
             activeOpacity={0.75}
-            style={{ marginLeft: 'auto' + '' }}>
+            style={{ marginLeft: 'auto' + '' }}
+            onPress={() => navigation.navigate('update-profile')}>
             <MCIcon name="pencil" color={Colors.primary} size={24} />
           </TouchableOpacity>
         </View>
