@@ -15,7 +15,7 @@ import styles from './styles';
 const ProfileTabScreen = ({ navigation }) => {
   const SCREENS = [
     { icon: 'cash-multiple', text: 'Payment', route: '' },
-    { icon: 'account', text: 'Profile', route: '' },
+    { icon: 'account', text: 'Profile', route: 'profile' },
     { icon: 'map-marker', text: 'Address book', route: 'address-book' },
     { icon: 'cog', text: 'Settings', route: '' },
     { icon: 'information', text: 'About', route: 'about' },
@@ -27,7 +27,7 @@ const ProfileTabScreen = ({ navigation }) => {
       <ScrollView contentContainerStyle={styles.container}>
         <Image source={person} style={[styles.dp, styles.mb8]} />
         <Text variant="bodyLarge" style={styles.bold}>
-          Matthew Promise Theo
+          Matthew Ola Olukoju
         </Text>
         <Text variant="bodyMedium" style={[{ color: Colors.grey }, styles.mb8]}>
           +234 816 770 2086

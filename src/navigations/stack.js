@@ -25,6 +25,7 @@ import LiveFeedScreen from '../screens/ordering/livefeed';
 import ChatScreen from '../screens/ordering/chat';
 import AboutScreen from '../screens/profile_tab/about';
 import AddressBookScreen from '../screens/profile_tab/address_book';
+import ProfileOverviewScreen from '../screens/profile_tab/profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -124,6 +125,11 @@ const StackNavigation = () => {
           name="address-book"
           component={AddressBookScreen}
           options={{ headerTitle: 'Address Book' }}
+        />
+        <Stack.Screen
+          name="profile"
+          component={ProfileOverviewScreen}
+          options={{ headerTitle: 'Profile' }}
         />
       </Stack.Group>
     </Stack.Navigator>
