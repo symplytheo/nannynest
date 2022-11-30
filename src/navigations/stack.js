@@ -28,6 +28,7 @@ import AddressBookScreen from '../screens/profile_tab/address_book';
 import ProfileOverviewScreen from '../screens/profile_tab/profile';
 import AccountUpdateProfileScreen from '../screens/profile_tab/update_profile';
 import PaymentMethodScreen from '../screens/profile_tab/payment';
+import PaymentAddCardScreen from '../screens/profile_tab/payment_addcard';
 
 const Stack = createNativeStackNavigator();
 
@@ -146,6 +147,11 @@ const StackNavigation = () => {
           name="payment"
           component={PaymentMethodScreen}
           options={{ headerTitle: 'Payment' }}
+        />
+        <Stack.Screen
+          name="payment-addcard"
+          component={PaymentAddCardScreen}
+          options={{ headerTitle: 'Add Card' }}
         />
       </Stack.Group>
     </Stack.Navigator>

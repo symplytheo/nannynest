@@ -11,7 +11,7 @@ const PaymentMethodScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Text variant="bodyLarge" style={styles.mb8}>
+        <Text variant="bodyLarge" style={[styles.title, styles.mb8]}>
           Payment Method
         </Text>
         <View style={[styles.mb8, styles.mt8]}>
@@ -26,7 +26,11 @@ const PaymentMethodScreen = ({ navigation }) => {
           </RadioButton.Group>
 
           <View style={[styles.mt8, styles.profileOverview]}>
-            <AppButton icon="plus" mode="text" textColor={Colors.primary}>
+            <AppButton
+              icon="plus"
+              mode="text"
+              textColor={Colors.primary}
+              onPress={() => navigation.navigate('payment-addcard')}>
               Add debit/credit card
             </AppButton>
           </View>

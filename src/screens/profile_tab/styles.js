@@ -34,12 +34,14 @@ const styles = StyleSheet.create({
     marginRight: 'auto',
     backgroundColor: Colors.primaryContainer,
   },
-  title: { marginBottom: 8, fontWeight: '500' },
+  title: { marginBottom: 4, fontWeight: '500' },
   phoneInput: { flexDirection: 'row', justifyContent: 'space-between' },
   country: { width: '35%' },
   number: { width: '60%', height: 56 },
   flag: { width: 24, height: 16 },
   method: { marginLeft: 16, flex: 1 },
+  halfWidth: { width: '48%' },
+  f1: { flex: 1 },
 });
 
 export default styles;
