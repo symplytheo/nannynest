@@ -23,12 +23,15 @@ import NannyDestinationScreen from '../screens/ordering/nanny_destination';
 import OrderMapEditScreen from '../screens/ordering/map_edit';
 import LiveFeedScreen from '../screens/ordering/livefeed';
 import ChatScreen from '../screens/ordering/chat';
+import AboutScreen from '../screens/profile_tab/about';
+import AddressBookScreen from '../screens/profile_tab/address_book';
+import ProfileOverviewScreen from '../screens/profile_tab/profile';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="welcome">
+    <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -112,6 +115,21 @@ const StackNavigation = () => {
               </TouchableOpacity>
             ),
           }}
+        />
+        <Stack.Screen
+          name="about"
+          component={AboutScreen}
+          options={{ headerTitle: 'About' }}
+        />
+        <Stack.Screen
+          name="address-book"
+          component={AddressBookScreen}
+          options={{ headerTitle: 'Address Book' }}
+        />
+        <Stack.Screen
+          name="profile"
+          component={ProfileOverviewScreen}
+          options={{ headerTitle: 'Profile' }}
         />
       </Stack.Group>
     </Stack.Navigator>
