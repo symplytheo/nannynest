@@ -23,6 +23,7 @@ import NannyDestinationScreen from '../screens/ordering/nanny_destination';
 import OrderMapEditScreen from '../screens/ordering/map_edit';
 import LiveFeedScreen from '../screens/ordering/livefeed';
 import ChatScreen from '../screens/ordering/chat';
+import AboutScreen from '../screens/profile_tab/about';
 
 const Stack = createNativeStackNavigator();
 
@@ -112,6 +113,11 @@ const StackNavigation = () => {
               </TouchableOpacity>
             ),
           }}
+        />
+        <Stack.Screen
+          name="about"
+          component={AboutScreen}
+          options={{ headerTitle: 'About' }}
         />
       </Stack.Group>
     </Stack.Navigator>
