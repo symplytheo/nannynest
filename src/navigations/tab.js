@@ -6,6 +6,7 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DashboardScreen from '../screens/dashboard';
 import { Colors } from '../styles/colors';
 import ProfileTabScreen from '../screens/profile_tab';
+import MyOrdersScreen from '../screens/myorder';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -15,7 +16,6 @@ const Screen = ({ name }) => (
   </SafeAreaView>
 );
 
-const Orders = () => <Screen name="Orders" />;
 const Search = () => <Screen name="Search" />;
 
 const styles = StyleSheet.create({
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 const SCREENS = [
   { name: 'home', icon: 'home', component: DashboardScreen },
   { name: 'search', icon: 'magnify', component: Search },
-  { name: 'orders', icon: 'ticket-confirmation', component: Orders },
+  { name: 'orders', icon: 'ticket-confirmation', component: MyOrdersScreen },
   { name: 'account', icon: 'account', component: ProfileTabScreen },
 ];
 

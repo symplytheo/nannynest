@@ -29,6 +29,7 @@ import ProfileOverviewScreen from '../screens/profile_tab/profile';
 import AccountUpdateProfileScreen from '../screens/profile_tab/update_profile';
 import PaymentMethodScreen from '../screens/profile_tab/payment';
 import PaymentAddCardScreen from '../screens/profile_tab/payment_addcard';
+import OrderDetails from '../screens/myorder/details';
 
 const Stack = createNativeStackNavigator();
 
@@ -87,6 +88,7 @@ const StackNavigation = () => {
         <Stack.Screen name="map-edit" component={OrderMapEditScreen} />
         <Stack.Screen name="livefeed" component={LiveFeedScreen} />
       </Stack.Group>
+
       <Stack.Group
         screenOptions={{
           headerTitle: '',
@@ -153,6 +155,7 @@ const StackNavigation = () => {
           component={PaymentAddCardScreen}
           options={{ headerTitle: 'Add Card' }}
         />
+        <Stack.Screen name="order-details" component={OrderDetails} />
       </Stack.Group>
     </Stack.Navigator>
   );
