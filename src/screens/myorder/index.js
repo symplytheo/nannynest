@@ -48,7 +48,11 @@ const MyOrdersScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
             {!i && (
-              <AppButton style={{ marginTop: 16 + 0 }}>Rate Order</AppButton>
+              <AppButton
+                style={{ marginTop: 16 + 0 }}
+                onPress={() => navigation.navigate('rate-nanny')}>
+                Rate Order
+              </AppButton>
             )}
           </View>
         ))}

@@ -17,8 +17,8 @@ import styles from './styles';
 import person from '../../assets/img/person.png';
 
 const DashboardScreen = ({ navigation }) => {
-  const [showOngoing] = useState(true);
-  const [showRateNanny] = useState(false);
+  const [showOngoing] = useState(false);
+  const [showRateNanny] = useState(true);
 
   const scale = useRef(new Animated.Value(1)).current;
 
@@ -138,7 +138,7 @@ const DashboardScreen = ({ navigation }) => {
             <SessionCard
               title="Rate your Nanny"
               subtitle="Mary"
-              onPress={() => Alert.alert('Rate Nanny')}
+              onPress={() => navigation.navigate('rate-nanny')}
             />
           )}
         </View>
