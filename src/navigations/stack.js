@@ -24,12 +24,13 @@ import OrderMapEditScreen from '../screens/ordering/map_edit';
 import LiveFeedScreen from '../screens/ordering/livefeed';
 import ChatScreen from '../screens/ordering/chat';
 import AboutScreen from '../screens/profile_tab/about';
+import AddressBookScreen from '../screens/profile_tab/address_book';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="welcome">
+    <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -118,6 +119,11 @@ const StackNavigation = () => {
           name="about"
           component={AboutScreen}
           options={{ headerTitle: 'About' }}
+        />
+        <Stack.Screen
+          name="address-book"
+          component={AddressBookScreen}
+          options={{ headerTitle: 'Address Book' }}
         />
       </Stack.Group>
     </Stack.Navigator>

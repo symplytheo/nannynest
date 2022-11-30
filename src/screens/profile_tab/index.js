@@ -16,7 +16,7 @@ const ProfileTabScreen = ({ navigation }) => {
   const SCREENS = [
     { icon: 'cash-multiple', text: 'Payment', route: '' },
     { icon: 'account', text: 'Profile', route: '' },
-    { icon: 'map-marker', text: 'Address book', route: '' },
+    { icon: 'map-marker', text: 'Address book', route: 'address-book' },
     { icon: 'cog', text: 'Settings', route: '' },
     { icon: 'information', text: 'About', route: 'about' },
     { icon: 'help-circle', text: 'Help', route: '' },
