@@ -149,4 +149,7 @@ export const styles = StyleSheet.create({
   chatDate: { color: Colors.grey, textAlign: 'center' },
   chatAvatar: { marginRight: 4, marginTop: 6 },
   chatRow: { flexDirection: 'row', justifyContent: 'flex-end' },
+  comment: { height: 112 },
+  mx_auto: { marginLeft: 'auto', marginRight: 'auto' },
+  mb8: { marginBottom: 8 },
 });
