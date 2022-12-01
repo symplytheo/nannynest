@@ -31,6 +31,7 @@ import PaymentMethodScreen from '../screens/profile_tab/payment';
 import PaymentAddCardScreen from '../screens/profile_tab/payment_addcard';
 import OrderDetails from '../screens/myorder/details';
 import RateNannyScreen from '../screens/ordering/rate_nanny';
+import SearchFilterScreen from '../screens/search/filter';
 
 const Stack = createNativeStackNavigator();
 
@@ -93,6 +94,7 @@ const StackNavigation = () => {
           options={{ presentation: 'transparentModal' }}
           component={RateNannyScreen}
         />
+        <Stack.Screen name="search-filter" component={SearchFilterScreen} />
       </Stack.Group>
 
       <Stack.Group
