@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Avatar, Checkbox, Text, TextInput } from 'react-native-paper';
 import { getToday } from 'react-native-modern-datepicker';
@@ -14,17 +14,10 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
     avatar: '',
     fullname: '',
     email: '',
-    dob: getToday(),
     terms: true,
   });
+  const [date, setDate] = useState(getToday());
   const [dateModal, setDateModal] = useState(false);
-
-  const _onSelectedChange = useCallback(
-    date => {
-      setForm(prev => ({ ...prev, dob: date }));
-    },
-    [setForm],
-  );
 
   const handleImageUpload = async () => {
     try {
@@ -49,7 +42,6 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
 
   const handleNext = () => {
     navigation.navigate('auth-social');
-    console.log(Object.keys(form));
   };
 
   return (
@@ -118,7 +110,7 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
                   style={{ height: styles.input.height }}
                   left={<TextInput.Icon icon="calendar-blank" />}
                   editable={false}
-                  value={form.dob}
+                  value={date}
                 />
               </View>
             </TouchableOpacity>
@@ -142,9 +134,9 @@ const AuthUpdateProfileScreen = ({ navigation }) => {
       <DatePickerModal
         title="Date of Birth"
         open={dateModal}
-        current={form.dob}
-        selected={form.dob}
-        onSelectedChange={_onSelectedChange}
+        current={date}
+        selected={date}
+        onSelectedChange={setDate}
         onClose={() => setDateModal(false)}
       />
     </SafeAreaView>

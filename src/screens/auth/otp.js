@@ -12,7 +12,6 @@ const AuthOtpScreen = ({ route, navigation }) => {
 
   const handleNext = () => {
     navigation.navigate('auth-profile');
-    console.log({ otp });
   };
 
   return (

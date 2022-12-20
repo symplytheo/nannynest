@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  Alert,
   Animated,
   Easing,
   Image,
@@ -117,7 +116,7 @@ const DashboardScreen = ({ navigation }) => {
           <TouchableOpacity
             style={[styles.cardRow, styles.location]}
             activeOpacity={0.8}
-            onPress={() => Alert.alert('Map View')}>
+            onPress={() => navigation.navigate('map-edit')}>
             <MCIcon size={24} name="map-marker" color={Colors.primary} />
             <Text variant="bodyMedium" style={styles.locationText}>
               5a, Ajayi Oni Street, Lagos, Nigeria
