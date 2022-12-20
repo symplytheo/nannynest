@@ -32,6 +32,7 @@ import PaymentAddCardScreen from '../screens/profile_tab/payment_addcard';
 import OrderDetails from '../screens/myorder/details';
 import RateNannyScreen from '../screens/ordering/rate_nanny';
 import SearchFilterScreen from '../screens/search/filter';
+import HelpScreen from '../screens/profile_tab/help';
 
 const Stack = createNativeStackNavigator();
 
@@ -164,6 +165,11 @@ const StackNavigation = () => {
           options={{ headerTitle: 'Add Card' }}
         />
         <Stack.Screen name="order-details" component={OrderDetails} />
+        <Stack.Screen
+          name="help"
+          component={HelpScreen}
+          options={{ headerTitle: 'Help' }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

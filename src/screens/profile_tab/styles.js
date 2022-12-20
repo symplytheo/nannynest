@@ -1,5 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors } from '../../styles/colors';
+import { Fonts } from '../../styles/fonts';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -42,6 +43,18 @@ const styles = StyleSheet.create({
   method: { marginLeft: 16, flex: 1 },
   halfWidth: { width: '48%' },
   f1: { flex: 1 },
+  faqQues: {
+    ...Fonts.bodyMedium,
+    fontWeight: '500',
+  },
+  faqAns: { ...Fonts.bodyMedium },
+  padless: { padding: 0 },
+  accordion: {
+    backgroundColor: Colors.white,
+    paddingVertical: 16,
+    paddingHorizontal: 0,
+    marginLeft: -4,
+  },
 });
 
 export default styles;
