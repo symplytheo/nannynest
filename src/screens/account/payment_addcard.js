@@ -13,29 +13,20 @@ const PaymentAddCardScreen = () => {
             <Text variant="bodyLarge" style={styles.title}>
               Card number
             </Text>
-            <TextInput
-              mode="outlined"
-              style={{ height: styles.input.height }}
-            />
+            <TextInput mode="outlined" style={{ height: styles.input.height }} />
           </View>
           <View style={[styles.inputContainer, styles.phoneInput]}>
             <View style={styles.halfWidth}>
               <Text variant="bodyLarge" style={styles.title}>
                 Expiry date
               </Text>
-              <TextInput
-                mode="outlined"
-                style={{ height: styles.input.height }}
-              />
+              <TextInput mode="outlined" style={{ height: styles.input.height }} />
             </View>
             <View style={styles.halfWidth}>
               <Text variant="bodyLarge" style={styles.title}>
                 CVV
               </Text>
-              <TextInput
-                mode="outlined"
-                style={{ height: styles.input.height }}
-              />
+              <TextInput mode="outlined" style={{ height: styles.input.height }} />
             </View>
           </View>
         </View>

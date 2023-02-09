@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
   },
   container: { padding: 16 },
-  lock: { height: 271 },
+  lock: { height: 240 },
   title: {
     marginBottom: 16,
     fontFamily: 'Montserrat-Bold',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     color: Colors.white,
   },
   row: { flexDirection: 'row' },
-  mb24: { marginBottom: 24 },
+  mb24: { marginBottom: 16 },
   text: { color: Colors.white, marginLeft: 8 },
   fab: { backgroundColor: Colors.onPrimary, borderRadius: 8 },
   fx1: { flex: 1 },

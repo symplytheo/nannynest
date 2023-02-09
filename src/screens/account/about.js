@@ -31,9 +31,7 @@ const AboutScreen = () => {
               item.subtext && { borderTopWidth: 0 + 0 },
             ]}>
             <View>
-              <Text
-                variant="bodyLarge"
-                style={item.subtext && [styles.bold, styles.mb8]}>
+              <Text variant="bodyLarge" style={item.subtext && [styles.bold, styles.mb8]}>
                 {item.text}
               </Text>
               {item.subtext && (

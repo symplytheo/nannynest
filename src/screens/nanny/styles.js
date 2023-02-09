@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   chipText: {
     fontSize: 12,
     fontWeight: '600',
+    textTransform: 'capitalize',
   },
   rating: {
     paddingBottom: 24,

@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Avatar, Text, TextInput } from 'react-native-paper';
 import { getToday } from 'react-native-modern-datepicker';
 import DocumentPicker from 'react-native-document-picker';
@@ -57,29 +51,19 @@ const AccountUpdateProfileScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView
-        contentContainerStyle={styles.container}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.form}>
           <View style={styles.inputContainer}>
             <TouchableOpacity activeOpacity={0.8} onPress={handleImageUpload}>
               {form.avatar ? (
-                <Image
-                  source={{ uri: form.avatar }}
-                  style={[styles.avatar, styles.dp]}
-                />
+                <Image source={{ uri: form.avatar }} style={[styles.avatar, styles.dp]} />
               ) : (
-                <Avatar.Icon
-                  icon="account"
-                  style={[styles.avatar, styles.dp]}
-                />
+                <Avatar.Icon icon="account" style={[styles.avatar, styles.dp]} />
               )}
             </TouchableOpacity>
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Full name
             </Text>
             <TextInput
@@ -89,9 +73,7 @@ const AccountUpdateProfileScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Phone Number
             </Text>
             <View style={styles.phoneInput}>
@@ -131,9 +113,7 @@ const AccountUpdateProfileScreen = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Email address
             </Text>
             <TextInput
@@ -144,9 +124,7 @@ const AccountUpdateProfileScreen = ({ navigation }) => {
             />
           </View>
           <View style={styles.inputContainer}>
-            <Text
-              variant="bodyLarge"
-              style={[styles.title, { marginBottom: 4 + 0 }]}>
+            <Text variant="bodyLarge" style={[styles.title, { marginBottom: 4 + 0 }]}>
               Date of Birth
             </Text>
             <TouchableOpacity activeOpacity={0.75}>

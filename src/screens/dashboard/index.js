@@ -14,10 +14,12 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
 import person from '../../assets/img/person.png';
+import { getRandomArrayItems, getAge } from '../../assets/js/utils';
+import { NANNIES } from '../../assets/js/data';
 
-const DashboardScreen = ({ navigation }) => {
-  const [showOngoing] = useState(false);
-  const [showRateNanny] = useState(true);
+const DashboardScreen = ({ route, navigation }) => {
+  const [showOngoing, setShowOngoing] = useState(false);
+  const [showRateNanny, setShowRateNanny] = useState(true);
 
   const scale = useRef(new Animated.Value(1)).current;
 
@@ -40,37 +42,43 @@ const DashboardScreen = ({ navigation }) => {
     ).start();
   }, [scale]);
 
-  const ProfileCard = ({ style, id, rest }) => {
+  useEffect(() => {
+    const ongoingSession = route.params?.ongoingSession;
+    setShowOngoing(ongoingSession);
+    setShowRateNanny(!ongoingSession);
+  }, [route]);
+
+  const ProfileCard = ({ item }) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        style={[style]}
-        onPress={() => navigation.navigate('nanny')}
-        {...rest}>
-        <Image source={person} style={styles.cardImage} />
+        style={styles.card}
+        onPress={() => navigation.navigate('nanny', { id: item.id })}>
+        <Image
+          source={{
+            uri: `https://randomuser.me/api/portraits/women/${NANNIES.indexOf(item)}.jpg`,
+          }}
+          style={styles.cardImage}
+        />
         <View style={styles.cardText}>
           <Text variant="bodyMedium" style={styles.bold}>
-            Matthew, <Text variant="bodyMedium">2{id}</Text>
+            {item.name.split(' ')[0]}, <Text variant="bodyMedium">{getAge(item.dateOfBirth)}</Text>
           </Text>
-          <Text
-            variant="bodySmall"
-            style={[{ color: Colors.grey }, styles.cardRow]}>
+          <Text variant="bodySmall" style={[{ color: Colors.grey }, styles.cardRow]}>
             <MCIcon size={14} name="map-marker" />
-            2km away
+            {item.distanceKm}km away
           </Text>
           <View style={styles.cardRow}>
             <StarRating
-              rating={4.8}
+              rating={item.rating}
               starSize={18}
               color={Colors.yellow}
               starStyle={styles.mx0}
               style={styles.cardRating}
               onChange={() => {}}
             />
-            <Text
-              variant="bodySmall"
-              style={[{ color: Colors.grey }, styles.bold]}>
-              4.8
+            <Text variant="bodySmall" style={[{ color: Colors.grey }, styles.bold]}>
+              {item.rating}
             </Text>
           </View>
           <Text variant="bodyLarge" style={[styles.bold, styles.cardRow]}>
@@ -86,15 +94,9 @@ const DashboardScreen = ({ navigation }) => {
       style={[styles.section, styles.sessionCard]}
       activeOpacity={0.8}
       onPress={onPress}>
-      <Avatar.Image
-        size={48}
-        source={person}
-        style={{ backgroundColor: Colors.grey }}
-      />
+      <Avatar.Image size={48} source={person} style={{ backgroundColor: Colors.grey }} />
       <View style={styles.sessionCardText}>
-        <Text
-          variant="bodyMedium"
-          style={[{ color: Colors.primary }, styles.bold, styles.mb4]}>
+        <Text variant="bodyMedium" style={[{ color: Colors.primary }, styles.bold, styles.mb4]}>
           {title}
         </Text>
         <Text variant="bodySmall" style={{ color: Colors.grey }}>
@@ -105,12 +107,15 @@ const DashboardScreen = ({ navigation }) => {
     </TouchableOpacity>
   );
 
+  // data
+  const topRateds = getRandomArrayItems(NANNIES, 8);
+  const nearBys = getRandomArrayItems(NANNIES, 5);
+  const saveds = getRandomArrayItems(NANNIES, 3);
+
   return (
     <SafeAreaView style={styles.container}>
       {/*  */}
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.mainContent}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.mainContent}>
         <View style={styles.topContent}>
           {/* Current Location */}
           <TouchableOpacity
@@ -146,8 +151,8 @@ const DashboardScreen = ({ navigation }) => {
             Top rated
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {[...Array(10)].map((_, v) => (
-              <ProfileCard key={v} id={v} style={[v < 9 && styles.card]} />
+            {topRateds.map((item, v) => (
+              <ProfileCard key={item.id} index={v} item={item} />
             ))}
           </ScrollView>
         </View>
@@ -157,8 +162,8 @@ const DashboardScreen = ({ navigation }) => {
             Near you
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {[...Array(10)].map((_, v) => (
-              <ProfileCard key={v} id={v} style={[v < 9 && styles.card]} />
+            {nearBys.map((item, v) => (
+              <ProfileCard key={item.id} index={v} item={item} />
             ))}
           </ScrollView>
         </View>
@@ -168,8 +173,8 @@ const DashboardScreen = ({ navigation }) => {
             Saved favorite
           </Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            {[...Array(10)].map((_, v) => (
-              <ProfileCard key={v} id={v} style={[v < 9 && styles.card]} />
+            {saveds.map((item, v) => (
+              <ProfileCard key={item.id} index={v} item={item} />
             ))}
           </ScrollView>
         </View>
@@ -177,8 +182,7 @@ const DashboardScreen = ({ navigation }) => {
 
       {/*  */}
       {showOngoing && (
-        <Animated.View
-          style={[styles.fabContainer, { transform: [{ scale }] }]}>
+        <Animated.View style={[styles.fabContainer, { transform: [{ scale }] }]}>
           <FAB
             icon="circle"
             color={Colors.primary}

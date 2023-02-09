@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Appbar, FAB } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from '../styles/colors';
 import AppSplashScreen from '../screens/splash';
@@ -10,7 +9,7 @@ import AuthPhoneNumberScreen from '../screens/auth/phone_number';
 import AuthOtpScreen from '../screens/auth/otp';
 import AuthUpdateProfileScreen from '../screens/auth/update_profile';
 import AuthSocialAccount from '../screens/auth/social_account';
-import NannyProfileScreen from '../screens/nanny_profile';
+import NannyProfileScreen from '../screens/nanny';
 import TabNavigation from './tab';
 import CancellationScreen from '../screens/cancellation';
 import CancellationOthersScreen from '../screens/cancellation/others';
@@ -23,20 +22,22 @@ import NannyDestinationScreen from '../screens/ordering/nanny_destination';
 import OrderMapEditScreen from '../screens/ordering/map_edit';
 import LiveFeedScreen from '../screens/ordering/livefeed';
 import ChatScreen from '../screens/ordering/chat';
-import AboutScreen from '../screens/profile_tab/about';
-import AddressBookScreen from '../screens/profile_tab/address_book';
-import ProfileOverviewScreen from '../screens/profile_tab/profile';
-import AccountUpdateProfileScreen from '../screens/profile_tab/update_profile';
-import PaymentMethodScreen from '../screens/profile_tab/payment';
-import PaymentAddCardScreen from '../screens/profile_tab/payment_addcard';
+import AboutScreen from '../screens/account/about';
+import AddressBookScreen from '../screens/account/address_book';
+import ProfileOverviewScreen from '../screens/account/profile';
+import AccountUpdateProfileScreen from '../screens/account/update_profile';
+import PaymentMethodScreen from '../screens/account/payment';
+import PaymentAddCardScreen from '../screens/account/payment_addcard';
 import OrderDetails from '../screens/myorder/details';
 import RateNannyScreen from '../screens/ordering/rate_nanny';
 import SearchFilterScreen from '../screens/search/filter';
-import HelpScreen from '../screens/profile_tab/help';
+import HelpScreen from '../screens/account/help';
+import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
+  const navigation = useNavigation();
   return (
     <Stack.Navigator initialRouteName="welcome">
       <Stack.Group screenOptions={{ headerShown: false }}>
@@ -47,31 +48,24 @@ const StackNavigation = () => {
 
       <Stack.Group
         screenOptions={{
-          header: ({ navigation, back, options }) => (
-            <Appbar.Header style={styles.header}>
-              {back ? (
-                <FAB
-                  customSize={48}
-                  mode="flat"
-                  icon="arrow-left"
-                  style={styles.fab}
-                  onPress={navigation.goBack}
-                />
-              ) : null}
-              <Appbar.Content title={options.title} titleStyle={styles.title} />
-            </Appbar.Header>
+          headerLeft: ({ canGoBack }) => (
+            <TouchableOpacity
+              activeOpacity={0.7}
+              style={styles.fab}
+              onPress={canGoBack ? navigation.goBack : () => {}}>
+              <MCIcon name="arrow-left" color={Colors.black} size={24} />
+            </TouchableOpacity>
           ),
-          headerTitle: null,
+          headerTitle: '',
+          headerStyle: { backgroundColor: Colors.background },
+          headerShadowVisible: false,
         }}>
         <Stack.Screen name="auth-phone" component={AuthPhoneNumberScreen} />
         <Stack.Screen name="auth-otp" component={AuthOtpScreen} />
         <Stack.Screen name="auth-profile" component={AuthUpdateProfileScreen} />
         <Stack.Screen name="auth-social" component={AuthSocialAccount} />
         <Stack.Screen name="cancel-order" component={CancellationScreen} />
-        <Stack.Screen
-          name="cancel-order-others"
-          component={CancellationOthersScreen}
-        />
+        <Stack.Screen name="cancel-order-others" component={CancellationOthersScreen} />
       </Stack.Group>
 
       {/* Ordering Nanny Stacks */}
@@ -101,7 +95,7 @@ const StackNavigation = () => {
       <Stack.Group
         screenOptions={{
           headerTitle: '',
-          headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+          headerTitleStyle: { fontFamily: 'Montserrat-SemiBold', fontWeight: '600' },
         }}>
         <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
         <Stack.Screen name="order-summary" component={OrderSummaryScreen} />
@@ -111,8 +105,8 @@ const StackNavigation = () => {
           options={{
             headerTitle: 'Nanny is on their way to you',
             headerTitleStyle: {
-              fontWeight: '400',
-              fontFamily: 'Montserrat',
+              fontWeight: '500',
+              fontFamily: 'Montserrat-Medium',
               fontSize: 14,
             },
           }}
@@ -121,6 +115,7 @@ const StackNavigation = () => {
           name="chat"
           component={ChatScreen}
           options={{
+            headerTitleAlign: 'center',
             headerTitle: 'Chat',
             headerLeft: () => (
               <TouchableOpacity activeOpacity={0.7}>
@@ -134,11 +129,7 @@ const StackNavigation = () => {
             ),
           }}
         />
-        <Stack.Screen
-          name="about"
-          component={AboutScreen}
-          options={{ headerTitle: 'About' }}
-        />
+        <Stack.Screen name="about" component={AboutScreen} options={{ headerTitle: 'About' }} />
         <Stack.Screen
           name="address-book"
           component={AddressBookScreen}
@@ -165,20 +156,21 @@ const StackNavigation = () => {
           options={{ headerTitle: 'Add Card' }}
         />
         <Stack.Screen name="order-details" component={OrderDetails} />
-        <Stack.Screen
-          name="help"
-          component={HelpScreen}
-          options={{ headerTitle: 'Help' }}
-        />
+        <Stack.Screen name="help" component={HelpScreen} options={{ headerTitle: 'Help' }} />
       </Stack.Group>
     </Stack.Navigator>
   );
 };
 
 const styles = StyleSheet.create({
-  header: { backgroundColor: Colors.background },
-  fab: { borderRadius: 8, marginLeft: 10 },
-  title: { fontSize: 18, fontWeight: '600' },
+  fab: {
+    borderRadius: 8,
+    backgroundColor: Colors.primaryContainer,
+    width: 44,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default StackNavigation;

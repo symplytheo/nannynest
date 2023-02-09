@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, ScrollView, StatusBar, View } from 'react-native';
 import { Chip, FAB, Text } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -6,9 +6,19 @@ import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AppButton from '../../components/appbutton';
 import { Colors } from '../../styles/colors';
 import styles from './styles';
+import { NANNIES } from '../../assets/js/data';
+import { getAge } from '../../assets/js/utils';
 
-const NannyProfileScreen = ({ navigation }) => {
+const NannyProfileScreen = ({ route, navigation }) => {
   const [fav, setFav] = useState(false);
+  const [nanny, setNanny] = useState({ categories: [], reviews: [] });
+
+  useEffect(() => {
+    const id = route.params?.id;
+    const item = NANNIES.find(el => el.id === id);
+    setNanny(item);
+  }, [route]);
+
   return (
     <SafeAreaView
       style={styles.container}
@@ -23,7 +33,9 @@ const NannyProfileScreen = ({ navigation }) => {
       {/*  */}
       <ScrollView showsVerticalScrollIndicator={false}>
         <Image
-          source={require('../../assets/img/person.png')}
+          source={{
+            uri: `https://randomuser.me/api/portraits/women/${NANNIES.indexOf(nanny)}.jpg`,
+          }}
           style={styles.image}
           resizeMode="cover"
         />
@@ -31,26 +43,20 @@ const NannyProfileScreen = ({ navigation }) => {
           <View style={[styles.rowBetween, { marginBottom: 16 + 0 }]}>
             <View>
               <Text variant="titleSmall" style={styles.bold}>
-                Matthew, 24
+                {nanny?.name}, {getAge(nanny.dateOfBirth)}
               </Text>
               <View style={styles.distance}>
-                <Text
-                  variant="bodyMedium"
-                  style={{ color: Colors.grey, marginTop: 8 + 0 }}>
+                <Text variant="bodyMedium" style={{ color: Colors.grey, marginTop: 8 + 0 }}>
                   <MCIcon size={20} name="map-marker" />
-                  2km away
+                  {nanny.distanceKm}km away
                 </Text>
-                <Text
-                  variant="bodyMedium"
-                  style={{ color: Colors.grey, marginLeft: 4 + 0 }}>
+                <Text variant="bodyMedium" style={{ color: Colors.grey, marginLeft: 4 + 0 }}>
                   <MCIcon size={20} name="star" color={Colors.yellow} />
-                  4.8
+                  {nanny.rating}
                 </Text>
               </View>
             </View>
-            <Text
-              variant="titleSmall"
-              style={[styles.bold, { color: Colors.primary }]}>
+            <Text variant="titleSmall" style={[styles.bold, { color: Colors.primary }]}>
               $5/h
             </Text>
           </View>
@@ -60,9 +66,7 @@ const NannyProfileScreen = ({ navigation }) => {
               About
             </Text>
             <Text variant="bodyMedium" style={{ color: Colors.grey }}>
-              This is about Mary Jane not about the designer. The designer is
-              not a nanny. He will do a very bad job at that. Don't hire him to
-              nanny work
+              {nanny.about}
             </Text>
           </View>
 
@@ -71,7 +75,7 @@ const NannyProfileScreen = ({ navigation }) => {
               Categories
             </Text>
             <View style={styles.chipContainer}>
-              {['Child', 'Toddler', 'Elderly', 'Disabled'].map(el => (
+              {nanny.categories.map(el => (
                 <Chip key={el} textStyle={styles.chipText} style={styles.chip}>
                   {el}
                 </Chip>
@@ -83,7 +87,7 @@ const NannyProfileScreen = ({ navigation }) => {
             <Text variant="bodyMedium" style={{ color: Colors.grey }}>
               Languages
             </Text>
-            <Text variant="bodyMedium">English, Pidgin, French</Text>
+            <Text variant="bodyMedium">{nanny.languages}</Text>
           </View>
 
           <View style={[styles.section, styles.rowBetween]}>
@@ -97,30 +101,27 @@ const NannyProfileScreen = ({ navigation }) => {
             <Text variant="bodyMedium" style={{ color: Colors.grey }}>
               Nationality
             </Text>
-            <Text variant="bodyMedium">Nigerian</Text>
+            <Text variant="bodyMedium">{nanny.nationality}</Text>
           </View>
 
           <View style={[styles.section, styles.rowBetween]}>
             <Text variant="bodyMedium" style={{ color: Colors.grey }}>
               Experience
             </Text>
-            <Text variant="bodyMedium">5 Years</Text>
+            <Text variant="bodyMedium">{nanny.yearsOfExperience} Year(s)</Text>
           </View>
 
           <View style={[styles.section, styles.lastSection]}>
             <Text variant="bodyLarge" style={styles.sectionTitle}>
               Ratings
             </Text>
-            {[1, 2, 3, 4].map(x => (
-              <View key={x} style={[styles.rating, x > 1 && styles.paddingTop]}>
-                <Text
-                  variant="bodyMedium"
-                  style={{ color: Colors.grey, marginBottom: 8 + 0 }}>
-                  <MCIcon size={20} name="star" color={Colors.yellow} /> 4.{x}
+            {nanny.reviews.map((review, x) => (
+              <View key={review.id} style={[styles.rating, x > 1 && styles.paddingTop]}>
+                <Text variant="bodyMedium" style={{ color: Colors.grey, marginBottom: 8 + 0 }}>
+                  <MCIcon size={20} name="star" color={Colors.yellow} /> {review.rating}
                 </Text>
                 <Text variant="bodyMedium" style={{ color: Colors.grey }}>
-                  Again, This designer have done a very beautiful job but do not
-                  ever hire for a nanny work. He's not very good at that.
+                  {review.comment}
                 </Text>
               </View>
             ))}

@@ -25,10 +25,7 @@ const TimePickerModal = ({ open, title, onClose, onConfirmChange }) => {
       onRequestClose={() => {
         console.log('Modal has been closed.');
       }}>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={styles.modalContainer}
-        onPress={onClose}>
+      <TouchableOpacity activeOpacity={1} style={styles.modalContainer} onPress={onClose}>
         <View
           style={styles.modalView}
           onStartShouldSetResponder={event => true}
@@ -39,6 +36,7 @@ const TimePickerModal = ({ open, title, onClose, onConfirmChange }) => {
           <TimePicker
             mode="time"
             date={time}
+            androidVariant="nativeAndroid"
             onDateChange={val => setTime(val)}
           />
           <AppButton onPress={handleConfirm}>OK</AppButton>

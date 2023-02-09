@@ -13,10 +13,7 @@ const RateNannyScreen = ({ navigation }) => {
   const [comment, setComment] = useState('');
 
   return (
-    <TouchableOpacity
-      activeOpacity={1}
-      onPress={navigation.goBack}
-      style={styles.transContainer}>
+    <TouchableOpacity activeOpacity={1} onPress={navigation.goBack} style={styles.transContainer}>
       <View
         style={[styles.orderDate, { paddingBottom: insets.bottom }]}
         onStartShouldSetResponder={event => true}

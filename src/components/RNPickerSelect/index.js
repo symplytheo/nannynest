@@ -3,15 +3,7 @@
 */
 
 import React, { PureComponent } from 'react';
-import {
-  Keyboard,
-  Modal,
-  Platform,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Keyboard, Modal, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import isEqual from 'lodash.isequal';
 import { Picker } from '@react-native-picker/picker';
@@ -167,8 +159,7 @@ export default class RNPickerSelect extends PureComponent {
       value: this.props.value,
     });
     const selectedItemChanged =
-      !isEqual(this.props.value, undefined) &&
-      !isEqual(prevState.selectedItem, selectedItem);
+      !isEqual(this.props.value, undefined) && !isEqual(prevState.selectedItem, selectedItem);
 
     if (itemsChanged || selectedItemChanged) {
       this.props.onValueChange(selectedItem.value, idx);
@@ -253,9 +244,7 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     const animationType =
-      modalProps && modalProps.animationType
-        ? modalProps.animationType
-        : 'slide';
+      modalProps && modalProps.animationType ? modalProps.animationType : 'slide';
 
     this.triggerOpenCloseCallbacks();
 
@@ -320,9 +309,7 @@ export default class RNPickerSelect extends PureComponent {
                 style.chevron,
                 defaultStyles.chevronUp,
                 style.chevronUp,
-                onUpArrow
-                  ? [defaultStyles.chevronActive, style.chevronActive]
-                  : {},
+                onUpArrow ? [defaultStyles.chevronActive, style.chevronActive] : {},
               ]}
             />
           </TouchableOpacity>
@@ -335,9 +322,7 @@ export default class RNPickerSelect extends PureComponent {
                 style.chevron,
                 defaultStyles.chevronDown,
                 style.chevronDown,
-                onDownArrow
-                  ? [defaultStyles.chevronActive, style.chevronActive]
-                  : {},
+                onDownArrow ? [defaultStyles.chevronActive, style.chevronActive] : {},
               ]}
             />
           </TouchableOpacity>
@@ -362,9 +347,7 @@ export default class RNPickerSelect extends PureComponent {
               style={[
                 defaultStyles.done,
                 style.done,
-                doneDepressed
-                  ? [defaultStyles.doneDepressed, style.doneDepressed]
-                  : {},
+                doneDepressed ? [defaultStyles.doneDepressed, style.doneDepressed] : {},
               ]}>
               {doneText}
             </Text>
@@ -382,9 +365,7 @@ export default class RNPickerSelect extends PureComponent {
     }
 
     return (
-      <View
-        testID="icon_container"
-        style={[defaultStyles.iconContainer, style.iconContainer]}>
+      <View testID="icon_container" style={[defaultStyles.iconContainer, style.iconContainer]}>
         <Icon testID="icon" />
       </View>
     );
@@ -395,9 +376,7 @@ export default class RNPickerSelect extends PureComponent {
     const { selectedItem } = this.state;
 
     const containerStyle =
-      Platform.OS === 'ios'
-        ? style.inputIOSContainer
-        : style.inputAndroidContainer;
+      Platform.OS === 'ios' ? style.inputIOSContainer : style.inputAndroidContainer;
 
     if (children) {
       return (
@@ -415,11 +394,7 @@ export default class RNPickerSelect extends PureComponent {
             Platform.OS === 'ios' ? style.inputIOS : style.inputAndroid,
             this.getPlaceholderStyle(),
           ]}
-          value={
-            selectedItem.inputLabel
-              ? selectedItem.inputLabel
-              : selectedItem.label
-          }
+          value={selectedItem.inputLabel ? selectedItem.inputLabel : selectedItem.label}
           ref={this.setInputRef}
           editable={false}
           {...textInputProps}
@@ -430,8 +405,7 @@ export default class RNPickerSelect extends PureComponent {
   }
 
   renderIOS() {
-    const { style, modalProps, pickerProps, touchableWrapperProps } =
-      this.props;
+    const { style, modalProps, pickerProps, touchableWrapperProps } = this.props;
     const { animationType, orientation, selectedItem, showPicker } = this.state;
 
     return (

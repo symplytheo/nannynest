@@ -36,10 +36,7 @@ const OrderDateTimeModalScreen = ({ navigation }) => {
   };
 
   return (
-    <TouchableOpacity
-      activeOpacity={1}
-      onPress={navigation.goBack}
-      style={styles.transContainer}>
+    <TouchableOpacity activeOpacity={1} onPress={navigation.goBack} style={styles.transContainer}>
       <View
         style={[styles.orderDate, { paddingBottom: insets.bottom }]}
         onStartShouldSetResponder={event => true}
@@ -120,12 +117,7 @@ const OrderDateTimeModalScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.orderDateFabView}>
-          <FAB
-            icon="check"
-            style={styles.orderDateFab}
-            color={Colors.white}
-            onPress={handleNext}
-          />
+          <FAB icon="check" style={styles.orderDateFab} color={Colors.white} onPress={handleNext} />
         </View>
       </View>
 

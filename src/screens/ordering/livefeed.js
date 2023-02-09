@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ImageBackground,
-  SafeAreaView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { ImageBackground, SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FAB, Text } from 'react-native-paper';
@@ -28,9 +23,7 @@ const LiveFeedScreen = ({ navigation }) => {
               style={styles.livefeedAction}
               onPress={() => navigation.navigate('chat')}>
               <MCIcon name="message-text" size={28} color={Colors.primary} />
-              <Text
-                variant="bodyMedium"
-                style={[styles.label, { color: Colors.primary }]}>
+              <Text variant="bodyMedium" style={[styles.label, { color: Colors.primary }]}>
                 Chat
               </Text>
             </TouchableOpacity>
@@ -39,14 +32,8 @@ const LiveFeedScreen = ({ navigation }) => {
               activeOpacity={0.75}
               style={styles.livefeedAction}
               onPress={() => navigation.navigate('checklist')}>
-              <MCIcon
-                name="order-bool-ascending-variant"
-                size={28}
-                color={Colors.primary}
-              />
-              <Text
-                variant="bodyMedium"
-                style={[styles.label, { color: Colors.primary }]}>
+              <MCIcon name="order-bool-ascending-variant" size={28} color={Colors.primary} />
+              <Text variant="bodyMedium" style={[styles.label, { color: Colors.primary }]}>
                 Checklist
               </Text>
             </TouchableOpacity>

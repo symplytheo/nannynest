@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Image,
-  ImageBackground,
-  SafeAreaView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, ImageBackground, SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import map from '../../assets/img/long-map.png';
 import lock from '../../assets/img/lock.png';
@@ -28,6 +22,13 @@ const NannyDestinationScreen = ({ navigation }) => {
       setShow(false);
     }, 3000);
 
+    return () => clearTimeout(timer);
+  }, [navigation]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.navigate('dashboard', { ongoingSession: true });
+    }, 5500);
     return () => clearTimeout(timer);
   }, [navigation]);
 
@@ -64,9 +65,7 @@ const NannyDestinationScreen = ({ navigation }) => {
                   navigation.navigate('checklist');
                 }}>
                 <Image source={lock} style={styles.safetyImage} />
-                <Text
-                  variant="bodyLarge"
-                  style={[styles.label, { color: Colors.white }]}>
+                <Text variant="bodyLarge" style={[styles.label, { color: Colors.white }]}>
                   Read safety measure
                 </Text>
               </TouchableOpacity>
@@ -75,9 +74,7 @@ const NannyDestinationScreen = ({ navigation }) => {
               <TouchableOpacity activeOpacity={0.7}>
                 <View style={[styles.row, styles.mb16]}>
                   <MCIcon name="map-marker" size={24} color={Colors.primary} />
-                  <Text variant="bodyMedium">
-                    5a, Ajayi Oni Street, Lagos, Nigeria
-                  </Text>
+                  <Text variant="bodyMedium">5a, Ajayi Oni Street, Lagos, Nigeria</Text>
                   <MCIcon name="chevron-right" size={24} color={Colors.grey} />
                 </View>
               </TouchableOpacity>

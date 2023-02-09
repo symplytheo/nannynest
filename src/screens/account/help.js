@@ -10,9 +10,7 @@ const HelpScreen = () => {
     <SafeAreaView style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.mb8}>
-          <Text
-            variant="bodyLarge"
-            style={[{ fontWeight: 500 + '' }, styles.mb8]}>
+          <Text variant="bodyLarge" style={[{ fontWeight: 500 + '' }, styles.mb8]}>
             How can I help you?
           </Text>
           <View style={[styles.profileOverview, styles.mb8]}>
@@ -29,9 +27,7 @@ const HelpScreen = () => {
         <Divider style={[styles.mb8, styles.mt8]} />
 
         <View style={styles.mt8}>
-          <Text
-            variant="bodyLarge"
-            style={[{ fontWeight: 500 + '' }, styles.mb8]}>
+          <Text variant="bodyLarge" style={[{ fontWeight: 500 + '' }, styles.mb8]}>
             FAQs
           </Text>
           <List.AccordionGroup>
