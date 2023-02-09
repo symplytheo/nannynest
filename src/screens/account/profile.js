@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import person from '../../assets/img/person.png';
@@ -67,9 +61,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         <View style={styles.socials}>
-          <Text
-            variant="bodyLarge"
-            style={[{ fontWeight: 500 + '' }, styles.mb8]}>
+          <Text variant="bodyLarge" style={[{ fontWeight: 500 + '' }, styles.mb8]}>
             Connected account
           </Text>
           <View style={styles.mt8}>
@@ -80,11 +72,7 @@ const ProfileOverviewScreen = ({ navigation }) => {
                 textColor={social.textColor}
                 style={styles.socialBtn}
                 icon={({ color }) => (
-                  <MCIcon
-                    name={social.icon}
-                    size={24}
-                    color={social.iconColor || color}
-                  />
+                  <MCIcon name={social.icon} size={24} color={social.iconColor || color} />
                 )}>
                 {social.name}
               </AppButton>

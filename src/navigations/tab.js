@@ -3,7 +3,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import DashboardScreen from '../screens/dashboard';
 import { Colors } from '../styles/colors';
-import ProfileTabScreen from '../screens/profile_tab';
+import ProfileTabScreen from '../screens/account';
 import MyOrdersScreen from '../screens/myorder';
 import SearchScreen from '../screens/search';
 
@@ -18,19 +18,14 @@ const SCREENS = [
 
 const TabNavigation = () => {
   return (
-    <Tab.Navigator
-      labeled={false}
-      activeColor={Colors.primary}
-      inactiveColor={Colors.grey}>
+    <Tab.Navigator labeled={false} activeColor={Colors.primary} inactiveColor={Colors.grey}>
       {SCREENS.map(screen => (
         <Tab.Screen
           key={screen.name}
           name={screen.name}
           component={screen.component}
           options={{
-            tabBarIcon: ({ color }) => (
-              <MCIcon name={screen.icon} color={color} size={26} />
-            ),
+            tabBarIcon: ({ color }) => <MCIcon name={screen.icon} color={color} size={26} />,
           }}
         />
       ))}

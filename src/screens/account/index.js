@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import person from '../../assets/img/person.png';
