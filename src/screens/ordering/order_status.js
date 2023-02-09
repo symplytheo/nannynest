@@ -21,10 +21,7 @@ const OrderStatusScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <TouchableOpacity
-      activeOpacity={1}
-      onPress={navigation.goBack}
-      style={styles.transContainer}>
+    <TouchableOpacity activeOpacity={1} onPress={navigation.goBack} style={styles.transContainer}>
       <View
         style={[styles.orderDate, { paddingBottom: insets.bottom }]}
         onStartShouldSetResponder={event => true}
@@ -38,25 +35,19 @@ const OrderStatusScreen = ({ navigation }) => {
               style={[{ textAlign: 'center' + '' }, styles.label, styles.mb16]}>
               Waiting for your Nanny to accept order
             </Text>
-            <ProgressBar
-              progress={0.5}
-              color={Colors.secondary}
-              indeterminate
-            />
+            <ProgressBar progress={0.5} color={Colors.secondary} indeterminate />
           </View>
         )}
 
         {(status === 'accepted' || status === 'rejected') && (
           <View>
-            <View
-              style={[styles.paymentRow, { justifyContent: 'center' + '' }]}>
+            <View style={[styles.paymentRow, { justifyContent: 'center' + '' }]}>
               <FAB
                 icon={status === 'accepted' ? 'check' : 'cancel'}
                 customSize={72}
                 color={status === 'accepted' ? Colors.green : Colors.red}
                 style={{
-                  backgroundColor:
-                    (status === 'accepted' ? Colors.green : Colors.red) + '30',
+                  backgroundColor: (status === 'accepted' ? Colors.green : Colors.red) + '30',
                   borderRadius: 40 + 0,
                 }}
                 mode="flat"
@@ -79,10 +70,7 @@ const OrderStatusScreen = ({ navigation }) => {
 
         <Text
           variant="bodyMedium"
-          style={[
-            styles.mb16,
-            { textAlign: 'center' + '', color: Colors.grey },
-          ]}>
+          style={[styles.mb16, { textAlign: 'center' + '', color: Colors.grey }]}>
           {status === 'accepted' ? 'Estimated time' : 'Avg. Response time'}
           {': '}
           <Text variant="bodyMedium" style={{ color: Colors.black }}>
@@ -98,9 +86,7 @@ const OrderStatusScreen = ({ navigation }) => {
             navigation.navigate('checklist');
           }}>
           <Image source={lock} style={styles.safetyImage} />
-          <Text
-            variant="bodyLarge"
-            style={[styles.label, { color: Colors.white }]}>
+          <Text variant="bodyLarge" style={[styles.label, { color: Colors.white }]}>
             Read safety measure
           </Text>
         </TouchableOpacity>
@@ -109,9 +95,7 @@ const OrderStatusScreen = ({ navigation }) => {
         <TouchableOpacity activeOpacity={0.7}>
           <View style={[styles.row, styles.mb16]}>
             <MCIcon name="map-marker" size={24} color={Colors.primary} />
-            <Text variant="bodyMedium">
-              5a, Ajayi Oni Street, Lagos, Nigeria
-            </Text>
+            <Text variant="bodyMedium">5a, Ajayi Oni Street, Lagos, Nigeria</Text>
             <MCIcon name="chevron-right" size={24} color={Colors.grey} />
           </View>
         </TouchableOpacity>

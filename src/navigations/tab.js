@@ -16,13 +16,14 @@ const SCREENS = [
   { name: 'account', icon: 'account', component: ProfileTabScreen },
 ];
 
-const TabNavigation = () => {
+const TabNavigation = ({ route }) => {
   return (
     <Tab.Navigator labeled={false} activeColor={Colors.primary} inactiveColor={Colors.grey}>
       {SCREENS.map(screen => (
         <Tab.Screen
           key={screen.name}
           name={screen.name}
+          initialParams={{ ...route.params }}
           component={screen.component}
           options={{
             tabBarIcon: ({ color }) => <MCIcon name={screen.icon} color={color} size={26} />,

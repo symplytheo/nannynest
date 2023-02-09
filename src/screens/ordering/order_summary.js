@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Divider, Text } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AppButton from '../../components/appbutton';
@@ -23,7 +17,7 @@ const SUMMARY = [
 const OrderSummaryScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView contentContainerStyle={styles.p16}>
+      <ScrollView contentContainerStyle={styles.p16} showsVerticalScrollIndicator={false}>
         {[1, 2].map(x => (
           <View key={x} style={[styles.row, styles.rate]}>
             <Text variant="bodyMedium">2x Infants</Text>
@@ -68,9 +62,7 @@ const OrderSummaryScreen = ({ navigation }) => {
           onPress={() => navigation.navigate('map-edit')}>
           <View style={[styles.row, styles.mb16]}>
             <MCIcon name="map-marker" size={24} color={Colors.primary} />
-            <Text variant="bodyMedium">
-              5a, Ajayi Oni Street, Lagos, Nigeria
-            </Text>
+            <Text variant="bodyMedium">5a, Ajayi Oni Street, Lagos, Nigeria</Text>
             <MCIcon name="chevron-right" size={24} color={Colors.grey} />
           </View>
           <Image source={mapImage} style={styles.map} />
@@ -81,15 +73,10 @@ const OrderSummaryScreen = ({ navigation }) => {
             Summary
           </Text>
           {SUMMARY.map((el, v) => (
-            <View
-              key={el.label}
-              style={[styles.row, styles.rate, { paddingHorizontal: 0 + 0 }]}>
+            <View key={el.label} style={[styles.row, styles.rate, { paddingHorizontal: 0 + 0 }]}>
               <Text
                 variant={v === 3 ? 'bodyLarge' : 'bodyMedium'}
-                style={[
-                  { color: v === 3 ? Colors.black : Colors.grey },
-                  v === 3 && styles.label,
-                ]}>
+                style={[{ color: v === 3 ? Colors.black : Colors.grey }, v === 3 && styles.label]}>
                 {el.label}
               </Text>
               <Text variant="bodyLarge" style={styles.label}>
@@ -106,9 +93,7 @@ const OrderSummaryScreen = ({ navigation }) => {
           </Text>
           <View style={styles.paymentRow}>
             <MCIcon name="clock-outline" size={24} color={Colors.primary} />
-            <Text
-              variant="bodyLarge"
-              style={{ color: Colors.grey, marginHorizontal: 16 + 0 }}>
+            <Text variant="bodyLarge" style={{ color: Colors.grey, marginHorizontal: 16 + 0 }}>
               **** 5674
             </Text>
             <AppButton mode="text" textColor={Colors.secondary}>
@@ -116,14 +101,12 @@ const OrderSummaryScreen = ({ navigation }) => {
             </AppButton>
           </View>
           <Text variant="bodyMedium" style={{ color: Colors.grey }}>
-            You'll be charged after nanny have marked session to be completed.
-            Service provider fee may apply.
+            You'll be charged after nanny have marked session to be completed. Service provider fee
+            may apply.
           </Text>
         </View>
 
-        <AppButton onPress={() => navigation.navigate('order-status')}>
-          Continue to Book
-        </AppButton>
+        <AppButton onPress={() => navigation.navigate('order-status')}>Continue to Book</AppButton>
       </ScrollView>
     </SafeAreaView>
   );

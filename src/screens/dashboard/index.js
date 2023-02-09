@@ -17,9 +17,9 @@ import person from '../../assets/img/person.png';
 import { getRandomArrayItems, getAge } from '../../assets/js/utils';
 import { NANNIES } from '../../assets/js/data';
 
-const DashboardScreen = ({ navigation }) => {
-  const [showOngoing] = useState(false);
-  const [showRateNanny] = useState(true);
+const DashboardScreen = ({ route, navigation }) => {
+  const [showOngoing, setShowOngoing] = useState(false);
+  const [showRateNanny, setShowRateNanny] = useState(true);
 
   const scale = useRef(new Animated.Value(1)).current;
 
@@ -41,6 +41,12 @@ const DashboardScreen = ({ navigation }) => {
       ]),
     ).start();
   }, [scale]);
+
+  useEffect(() => {
+    const ongoingSession = route.params?.ongoingSession;
+    setShowOngoing(ongoingSession);
+    setShowRateNanny(!ongoingSession);
+  }, [route]);
 
   const ProfileCard = ({ item }) => {
     return (

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import { Colors } from '../../styles/colors';
 
 export const styles = StyleSheet.create({
@@ -19,8 +19,13 @@ export const styles = StyleSheet.create({
     paddingTop: 24,
     borderRadius: 24,
   },
-  orderDateTitle: { textAlign: 'center', fontWeight: '600', marginBottom: 32 },
-  orderDateLabel: { fontWeight: '600', marginBottom: 8 },
+  orderDateTitle: {
+    textAlign: 'center',
+    fontWeight: '600',
+    marginBottom: 32,
+    fontFamily: 'Montserrat-Bold',
+  },
+  orderDateLabel: { fontWeight: '600', marginBottom: 8, fontFamily: 'Montserrat-Bold' },
   orderDateInputContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -30,6 +35,10 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 16,
+  },
+  bold: {
+    fontFamily: 'Montserrat-Bold',
+    fontWeight: Platform.OS === 'ios' ? '700' : '600',
   },
   orderDateFab: { backgroundColor: Colors.primary, borderRadius: 8 },
   mb16: { marginBottom: 16 },
@@ -43,6 +52,8 @@ export const styles = StyleSheet.create({
       height: 56,
       paddingHorizontal: 12,
       backgroundColor: Colors.onPrimary,
+      fontFamily: 'Montserrat',
+      color: Colors.black,
     },
     inputAndroid: {
       borderWidth: 1,
@@ -52,6 +63,8 @@ export const styles = StyleSheet.create({
       height: 56,
       paddingHorizontal: 12,
       backgroundColor: Colors.onPrimary,
+      fontFamily: 'Montserrat',
+      color: Colors.black,
     },
   },
   row: {
@@ -59,12 +72,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  label: { fontWeight: '600', color: Colors.onPrimaryContainer },
+  label: { fontWeight: '600', color: Colors.onPrimaryContainer, fontFamily: 'Montserrat-Bold' },
   p16: { padding: 16 },
   rate: { alignItems: 'flex-end', paddingHorizontal: 8, marginBottom: 8 },
   totalBtn: {
-    position: 'absolute',
     width: '100%',
+    marginTop: 48,
+    backgroundColor: Colors.background,
   },
   bordered: {
     borderTopWidth: 1,

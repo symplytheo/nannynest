@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Appbar, FAB } from 'react-native-paper';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from '../styles/colors';
 import AppSplashScreen from '../screens/splash';
@@ -33,10 +32,12 @@ import OrderDetails from '../screens/myorder/details';
 import RateNannyScreen from '../screens/ordering/rate_nanny';
 import SearchFilterScreen from '../screens/search/filter';
 import HelpScreen from '../screens/account/help';
+import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
+  const navigation = useNavigation();
   return (
     <Stack.Navigator initialRouteName="welcome">
       <Stack.Group screenOptions={{ headerShown: false }}>
@@ -47,21 +48,17 @@ const StackNavigation = () => {
 
       <Stack.Group
         screenOptions={{
-          header: ({ navigation, back, options }) => (
-            <Appbar.Header style={styles.header}>
-              {back ? (
-                <FAB
-                  customSize={48}
-                  mode="flat"
-                  icon="arrow-left"
-                  style={styles.fab}
-                  onPress={navigation.goBack}
-                />
-              ) : null}
-              <Appbar.Content title={options.title} titleStyle={styles.title} />
-            </Appbar.Header>
+          headerLeft: ({ canGoBack }) => (
+            <TouchableOpacity
+              activeOpacity={0.7}
+              style={styles.fab}
+              onPress={canGoBack ? navigation.goBack : () => {}}>
+              <MCIcon name="arrow-left" color={Colors.black} size={24} />
+            </TouchableOpacity>
           ),
-          headerTitle: null,
+          headerTitle: '',
+          headerStyle: { backgroundColor: Colors.background },
+          headerShadowVisible: false,
         }}>
         <Stack.Screen name="auth-phone" component={AuthPhoneNumberScreen} />
         <Stack.Screen name="auth-otp" component={AuthOtpScreen} />
@@ -98,7 +95,7 @@ const StackNavigation = () => {
       <Stack.Group
         screenOptions={{
           headerTitle: '',
-          headerTitleStyle: { fontFamily: 'Montserrat', fontWeight: '600' },
+          headerTitleStyle: { fontFamily: 'Montserrat-SemiBold', fontWeight: '600' },
         }}>
         <Stack.Screen name="beneficiary" component={BeneficiaryScreen} />
         <Stack.Screen name="order-summary" component={OrderSummaryScreen} />
@@ -108,8 +105,8 @@ const StackNavigation = () => {
           options={{
             headerTitle: 'Nanny is on their way to you',
             headerTitleStyle: {
-              fontWeight: '400',
-              fontFamily: 'Montserrat',
+              fontWeight: '500',
+              fontFamily: 'Montserrat-Medium',
               fontSize: 14,
             },
           }}
@@ -118,6 +115,7 @@ const StackNavigation = () => {
           name="chat"
           component={ChatScreen}
           options={{
+            headerTitleAlign: 'center',
             headerTitle: 'Chat',
             headerLeft: () => (
               <TouchableOpacity activeOpacity={0.7}>
@@ -165,9 +163,14 @@ const StackNavigation = () => {
 };
 
 const styles = StyleSheet.create({
-  header: { backgroundColor: Colors.background },
-  fab: { borderRadius: 8, marginLeft: 10 },
-  title: { fontSize: 18, fontWeight: '600' },
+  fab: {
+    borderRadius: 8,
+    backgroundColor: Colors.primaryContainer,
+    width: 44,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default StackNavigation;

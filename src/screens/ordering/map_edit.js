@@ -21,13 +21,8 @@ const OrderMapEditScreen = ({ navigation }) => {
           </Text>
 
           <View style={styles.mb16}>
-            <TextInput
-              style={{ height: styles.orderDateInput.height }}
-              mode="outlined"
-            />
-            <AppButton
-              style={[styles.mt16, styles.mb16]}
-              onPress={navigation.goBack}>
+            <TextInput style={{ height: styles.orderDateInput.height }} mode="outlined" />
+            <AppButton style={[styles.mt16, styles.mb16]} onPress={navigation.goBack}>
               Confirm address
             </AppButton>
           </View>

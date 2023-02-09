@@ -1,11 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {
-  Linking,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Linking, SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import { Avatar, Text, TextInput } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -31,9 +25,7 @@ const ChatScreen = ({ navigation }) => {
         </TouchableOpacity>
       ),
       headerRight: () => (
-        <TouchableOpacity
-          activeOpacity={0.7}
-          onPress={() => Linking.openURL('tel:+2348032616345')}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => Linking.openURL('tel:+2348032616345')}>
           <MCIcon name="phone" color={Colors.black} size={24} />
         </TouchableOpacity>
       ),
@@ -42,11 +34,7 @@ const ChatScreen = ({ navigation }) => {
 
   const Message = ({ content, time, isRead, type = 'sender' }) => (
     <View style={{ marginVertical: 4 + 0 }}>
-      <View
-        style={[
-          styles.chatRow,
-          type === 'receiver' && { justifyContent: 'flex-start' + '' },
-        ]}>
+      <View style={[styles.chatRow, type === 'receiver' && { justifyContent: 'flex-start' + '' }]}>
         {type === 'receiver' && (
           <Avatar.Image size={24} source={person} style={styles.chatAvatar} />
         )}
@@ -58,16 +46,9 @@ const ChatScreen = ({ navigation }) => {
           </View>
           <Text
             variant="bodySmall"
-            style={[
-              { color: Colors.grey },
-              type === 'sender' && { textAlign: 'right' + '' },
-            ]}>
+            style={[{ color: Colors.grey }, type === 'sender' && { textAlign: 'right' + '' }]}>
             {time}{' '}
-            <MCIcon
-              name="check-all"
-              size={12}
-              color={isRead ? Colors.secondary : Colors.grey}
-            />
+            <MCIcon name="check-all" size={12} color={isRead ? Colors.secondary : Colors.grey} />
           </Text>
         </View>
       </View>
@@ -81,9 +62,7 @@ const ChatScreen = ({ navigation }) => {
       <ScrollView
         ref={scrollViewRef}
         contentContainerStyle={[styles.p16, { minHeight: 100 + '%' }]}
-        onContentSizeChange={() =>
-          scrollViewRef.current.scrollToEnd({ animated: true })
-        }>
+        onContentSizeChange={() => scrollViewRef.current.scrollToEnd({ animated: true })}>
         <View>
           <Text variant="bodyMedium" style={[styles.chatDate, styles.mb16]}>
             Thu, Sep 29
