@@ -38,7 +38,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="welcome">
+    <Stack.Navigator initialRouteName="dashboard">
       <Stack.Group screenOptions={{ headerShown: false }}>
         <Stack.Screen name="welcome" component={AppSplashScreen} />
         <Stack.Screen name="onboarding" component={OnboardingScreen} />
@@ -68,10 +68,7 @@ const StackNavigation = () => {
         <Stack.Screen name="auth-profile" component={AuthUpdateProfileScreen} />
         <Stack.Screen name="auth-social" component={AuthSocialAccount} />
         <Stack.Screen name="cancel-order" component={CancellationScreen} />
-        <Stack.Screen
-          name="cancel-order-others"
-          component={CancellationOthersScreen}
-        />
+        <Stack.Screen name="cancel-order-others" component={CancellationOthersScreen} />
       </Stack.Group>
 
       {/* Ordering Nanny Stacks */}
@@ -134,11 +131,7 @@ const StackNavigation = () => {
             ),
           }}
         />
-        <Stack.Screen
-          name="about"
-          component={AboutScreen}
-          options={{ headerTitle: 'About' }}
-        />
+        <Stack.Screen name="about" component={AboutScreen} options={{ headerTitle: 'About' }} />
         <Stack.Screen
           name="address-book"
           component={AddressBookScreen}
@@ -165,11 +158,7 @@ const StackNavigation = () => {
           options={{ headerTitle: 'Add Card' }}
         />
         <Stack.Screen name="order-details" component={OrderDetails} />
-        <Stack.Screen
-          name="help"
-          component={HelpScreen}
-          options={{ headerTitle: 'Help' }}
-        />
+        <Stack.Screen name="help" component={HelpScreen} options={{ headerTitle: 'Help' }} />
       </Stack.Group>
     </Stack.Navigator>
   );
