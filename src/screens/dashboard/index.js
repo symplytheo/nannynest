@@ -47,7 +47,7 @@ const DashboardScreen = ({ navigation }) => {
       <TouchableOpacity
         activeOpacity={0.8}
         style={styles.card}
-        onPress={() => navigation.navigate('nanny')}>
+        onPress={() => navigation.navigate('nanny', { id: item.id })}>
         <Image
           source={{
             uri: `https://randomuser.me/api/portraits/women/${NANNIES.indexOf(item)}.jpg`,
